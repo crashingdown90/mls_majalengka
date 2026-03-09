@@ -556,57 +556,78 @@ const SlideArsitektur = () => (
 );
 
 const SlideIntegrasiOPD = () => (
-  <div className="flex flex-col h-full relative z-10 w-full mt-4">
-    <p className="text-slate-600 font-medium text-lg max-w-4xl leading-relaxed mb-6">
-      Inti dari Majalengka Langkung Sae adalah <strong className="text-teal-600">Interoperabilitas API</strong>. Aplikasi ini menarik benang merah dari berbagai pangkalan data terpisah milik tiap Organisasi Perangkat Daerah (OPD) menjadi satu aliran informasi yang real-time dan akurat.
+  <div className="flex flex-col h-full relative z-10 w-full mt-2">
+    <p className="text-slate-600 font-medium text-base sm:text-lg max-w-4xl leading-relaxed mb-6">
+      Majalengka Langkung Sae mengadopsi <strong className="text-teal-600">Dual-Core Integration Architecture</strong> untuk menjamin kecepatan layanan sekaligus kedalaman analisis data.
     </p>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full pb-4">
-      <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-white to-cyan-50/30 p-8 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col justify-center relative overflow-hidden group">
+      {/* Pendekatan I: API Management */}
+      <motion.div whileHover={{ y: -5 }} className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col relative overflow-hidden group">
         <div className="flex items-center space-x-4 mb-6 relative z-10">
-          <div className="bg-cyan-100/50 p-4 rounded-2xl ring-2 ring-cyan-200 group-hover:bg-cyan-200 transition-colors">
-            <Network className="text-cyan-700" size={32} />
+          <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100 group-hover:bg-cyan-100 transition-colors">
+            <Network className="text-cyan-600" size={32} />
           </div>
-          <h3 className="text-2xl font-extrabold text-slate-800">SILONDA Middleware</h3>
+          <div>
+            <h3 className="text-xl font-black text-slate-800 uppercase tracking-tight">API Management</h3>
+            <p className="text-[10px] text-cyan-600 font-black uppercase tracking-widest">Real-time Interoperability</p>
+          </div>
         </div>
 
-        <ul className="space-y-4 text-slate-600 relative z-10">
+        <ul className="space-y-4 text-slate-600 relative z-10 flex-1">
           <li className="flex items-start">
             <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5" />
-            <span className="leading-relaxed">Sistem Informasi Layanan Operasional Data Antar-lembaga (SILONDA) bertindak sebagai penerjemah antar aplikasi lama (Legacy System) OPD.</span>
+            <span className="text-sm font-medium leading-relaxed"><strong className="text-slate-800">SILONDA Middleware:</strong> Jembatan penghubung yang menerjemahkan data dari berbagai aplikasi *Legacy* OPD secara instan.</span>
           </li>
           <li className="flex items-start">
             <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5" />
-            <span className="leading-relaxed"><strong className="text-slate-800">API Gateway Terpusat:</strong> Disdukcapil (NIK), Dinkes (Rekam Medis), Bapenda (Pajak), dan Dinsos (Bansos) saling "berbicara" di belakang layar.</span>
+            <span className="text-sm font-medium leading-relaxed"><strong className="text-slate-800">API Gateway Terpusat:</strong> Standarisasi pertukaran data NIK, Pajak, dan Kesehatan untuk layanan publik yang mulus.</span>
           </li>
         </ul>
 
-        <div className="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity">
-          <Network size={200} className="text-cyan-600" />
+        <div className="mt-6 pt-6 border-t border-slate-50">
+          <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Teknologi Fokus:</div>
+          <div className="flex flex-wrap gap-2">
+            {["RESTful API", "GraphQL", "ESB", "Microservices"].map((t, i) => (
+              <span key={i} className="text-[9px] font-black px-3 py-1 bg-cyan-50 text-cyan-700 rounded-full border border-cyan-100">{t}</span>
+            ))}
+          </div>
         </div>
       </motion.div>
 
-      <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-white to-teal-50/30 p-8 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col justify-center relative overflow-hidden group">
+      {/* Pendekatan II: AI & Data Lake Engine */}
+      <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-[40px] border border-slate-700 text-white shadow-2xl flex flex-col relative overflow-hidden group">
+        <div className="absolute -right-20 -bottom-20 opacity-10 group-hover:opacity-20 transition-opacity">
+          <Cpu size={300} />
+        </div>
         <div className="flex items-center space-x-4 mb-6 relative z-10">
-          <div className="bg-teal-100/50 p-4 rounded-2xl ring-2 ring-teal-200 group-hover:bg-teal-200 transition-colors">
-            <RefreshCw className="text-teal-700" size={32} />
+          <div className="bg-white/10 p-4 rounded-2xl backdrop-blur-md border border-white/10">
+            <Database className="text-teal-400" size={32} />
           </div>
-          <h3 className="text-2xl font-extrabold text-slate-800">Dampak Integrasi (Warga)</h3>
+          <div>
+            <h3 className="text-xl font-black text-white uppercase tracking-tight">AI & Data Lake Engine</h3>
+            <p className="text-[10px] text-teal-400 font-black uppercase tracking-widest">Big Data & Prediction</p>
+          </div>
         </div>
 
-        <ul className="space-y-4 text-slate-600 relative z-10">
+        <ul className="space-y-4 text-slate-300 relative z-10 flex-1">
           <li className="flex items-start">
-            <CheckCircle2 className="text-teal-500 mr-4 shrink-0 mt-0.5" />
-            <span className="leading-relaxed"><strong className="text-slate-800">Zero Fotokopi KTP/KK:</strong> Warga cukup *login* ke Super App, otomatis data kependudukan langsung diverifikasi dari sistem Dukcapil.</span>
+            <CheckCircle2 className="text-teal-400 mr-4 shrink-0 mt-0.5" />
+            <span className="text-sm font-medium leading-relaxed"><strong className="text-white">Centralized Data Lake:</strong> Menampung seluruh data mentah (*raw data*) dari 40+ OPD tanpa mengubah sistem aslinya.</span>
           </li>
           <li className="flex items-start">
-            <CheckCircle2 className="text-teal-500 mr-4 shrink-0 mt-0.5" />
-            <span className="leading-relaxed"><strong className="text-slate-800">Layanan Otomatis:</strong> Bayi baru lahir di Puskesmas otomatis tercatat di KK, otomatis terdaftar di BPJS, dan langsung menerima KIA tanpa orang tua harus keliling dinas.</span>
+            <CheckCircle2 className="text-teal-400 mr-4 shrink-0 mt-0.5" />
+            <span className="text-sm font-medium leading-relaxed"><strong className="text-white">AI Processing Hub:</strong> AI menganalisis pola data untuk prediksi stunting, potensi kebocoran pajak, dan optimasi anggaran daerah.</span>
           </li>
         </ul>
 
-        <div className="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity">
-          <RefreshCw size={200} className="text-teal-600" />
+        <div className="mt-6 pt-6 border-t border-white/10">
+          <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-3">Teknologi Fokus:</div>
+          <div className="flex flex-wrap gap-2">
+            {["Hadoop/Spark", "Python AI", "Machine Learning", "Big Query"].map((t, i) => (
+              <span key={i} className="text-[9px] font-black px-3 py-1 bg-white/10 text-teal-300 rounded-full border border-white/10">{t}</span>
+            ))}
+          </div>
         </div>
       </motion.div>
     </div>
@@ -2775,65 +2796,7 @@ const slides = [
     id: "integrasi-opd",
     title: "Sinergi & Integrasi Data Lintas OPD",
     subtitle: "Meruntuhkan Ego Sektoral, Mewujudkan Satu Data",
-    content: (
-      <div className="flex flex-col h-full relative z-10 w-full mt-4">
-        <p className="text-slate-600 font-medium text-lg max-w-4xl leading-relaxed mb-6">
-          Inti dari Majalengka Langkung Sae adalah <strong className="text-teal-600">Interoperabilitas API</strong>. Aplikasi ini menarik benang merah dari berbagai pangkalan data terpisah milik tiap Organisasi Perangkat Daerah (OPD) menjadi satu aliran informasi yang real-time dan akurat.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full pb-4">
-
-          <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-white to-cyan-50/30 p-8 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col justify-center relative overflow-hidden group">
-            <div className="flex items-center space-x-4 mb-6 relative z-10">
-              <div className="bg-cyan-100/50 p-4 rounded-2xl ring-2 ring-cyan-200 group-hover:bg-cyan-200 transition-colors">
-                <Network className="text-cyan-700" size={32} />
-              </div>
-              <h3 className="text-2xl font-extrabold text-slate-800">SILONDA Middleware</h3>
-            </div>
-
-            <ul className="space-y-4 text-slate-600 relative z-10">
-              <li className="flex items-start">
-                <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Sistem Informasi Layanan Operasional Data Antar-lembaga (SILONDA) bertindak sebagai penerjemah antar aplikasi lama (Legacy System) OPD.</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5" />
-                <span className="leading-relaxed"><strong className="text-slate-800">API Gateway Terpusat:</strong> Disdukcapil (NIK), Dinkes (Rekam Medis), Bapenda (Pajak), dan Dinsos (Bansos) saling &ldquo;berbicara&rdquo; di belakang layar.</span>
-              </li>
-            </ul>
-
-            <div className="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Network size={200} className="text-cyan-600" />
-            </div>
-          </motion.div>
-
-          <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-white to-teal-50/30 p-8 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col justify-center relative overflow-hidden group">
-            <div className="flex items-center space-x-4 mb-6 relative z-10">
-              <div className="bg-teal-100/50 p-4 rounded-2xl ring-2 ring-teal-200 group-hover:bg-teal-200 transition-colors">
-                <RefreshCw className="text-teal-700" size={32} />
-              </div>
-              <h3 className="text-2xl font-extrabold text-slate-800">Dampak Integrasi (Warga)</h3>
-            </div>
-
-            <ul className="space-y-4 text-slate-600 relative z-10">
-              <li className="flex items-start">
-                <CheckCircle2 className="text-teal-500 mr-4 shrink-0 mt-0.5" />
-                <span className="leading-relaxed"><strong className="text-slate-800">Zero Fotokopi KTP/KK:</strong> Warga cukup *login* ke Super App, otomatis data kependudukan langsung diverifikasi dari sistem Dukcapil.</span>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle2 className="text-teal-500 mr-4 shrink-0 mt-0.5" />
-                <span className="leading-relaxed"><strong className="text-slate-800">Layanan Otomatis:</strong> Bayi baru lahir di Puskesmas otomatis tercatat di KK, otomatis terdaftar di BPJS, dan langsung menerima KIA tanpa orang tua harus keliling dinas.</span>
-              </li>
-            </ul>
-
-            <div className="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity">
-              <RefreshCw size={200} className="text-teal-600" />
-            </div>
-          </motion.div>
-
-        </div>
-      </div>
-    ),
+    content: <SlideIntegrasiOPD />,
     icon: <Network className="text-teal-500" />,
   },
   {

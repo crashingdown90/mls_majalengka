@@ -2749,6 +2749,10 @@ const slides = [
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
 
   // Keyboard navigation
   useEffect(() => {
@@ -2775,8 +2779,31 @@ export default function Presentation() {
     }
   };
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (Math.abs(distance) >= minSwipeDistance) {
+      if (distance > 0) nextSlide();
+      else prevSlide();
+    }
+  };
+
   return (
-    <div className="h-screen w-full bg-[#f8fafc] overflow-hidden flex flex-col font-sans selection:bg-teal-200 relative text-slate-800">
+    <div
+      className="h-screen w-full bg-[#f8fafc] overflow-hidden flex flex-col font-sans selection:bg-teal-200 relative text-slate-800"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
 
       {/* Light Theme Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -2786,7 +2813,7 @@ export default function Presentation() {
       </div>
 
       {/* Top Progress Bar */}
-      <div className="h-1.5 w-full bg-slate-200 z-50">
+      <div className="h-1 sm:h-1.5 w-full bg-slate-200 z-50 shrink-0">
         <motion.div
           className="h-full bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-500 shadow-sm"
           initial={{ width: 0 }}
@@ -2796,22 +2823,22 @@ export default function Presentation() {
       </div>
 
       {/* Fixed Logo Majalengka Globally on Top Right */}
-      <div className="absolute top-6 right-6 md:top-8 md:right-10 z-[100] pointer-events-none">
+      <div className="absolute top-3 right-3 sm:top-6 sm:right-6 md:top-8 md:right-10 z-[100] pointer-events-none">
         <motion.img
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.9, scale: 1 }}
           transition={{ duration: 0.5 }}
           src="/Logo_Majalengka.png"
           alt="Logo Pemkab Majalengka"
-          className="h-10 md:h-14 w-auto drop-shadow-md"
+          className="h-8 sm:h-10 md:h-14 w-auto drop-shadow-md"
         />
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 max-w-7xl w-full mx-auto p-6 md:p-10 lg:p-12 relative flex flex-col">
+      <div className="flex-1 min-h-0 max-w-7xl w-full mx-auto p-3 sm:p-6 md:p-10 lg:p-12 relative flex flex-col overflow-hidden">
 
         {/* Header (hidden on cover slide) */}
-        <div className="h-28 shrink-0">
+        <div className="shrink-0" style={{ minHeight: currentSlide === 0 ? '0' : undefined }}>
           <AnimatePresence mode="popLayout">
             {currentSlide !== 0 && (
               <motion.header
@@ -2820,16 +2847,16 @@ export default function Presentation() {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
                 transition={{ duration: 0.4 }}
-                className="relative z-20"
+                className="relative z-20 mb-2 sm:mb-4"
               >
-                <div className="inline-flex items-center space-x-2 bg-white border border-slate-200 text-teal-700 px-3 py-1 rounded-full text-xs font-bold mb-3 shadow-sm">
+                <div className="inline-flex items-center space-x-2 bg-white border border-slate-200 text-teal-700 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold mb-1 sm:mb-3 shadow-sm">
                   {slides[currentSlide].icon}
-                  <span className="ml-2 tracking-widest uppercase">Majalengka Sae App</span>
+                  <span className="ml-1 sm:ml-2 tracking-widest uppercase">Majalengka Sae App</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight drop-shadow-sm pb-1">
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 tracking-tight drop-shadow-sm pb-0.5 sm:pb-1 leading-tight">
                   {slides[currentSlide].title}
                 </h2>
-                <p className="text-lg text-slate-500 mt-2 font-medium">
+                <p className="text-xs sm:text-sm md:text-lg text-slate-500 mt-0.5 sm:mt-2 font-medium leading-snug">
                   {slides[currentSlide].subtitle}
                 </p>
               </motion.header>
@@ -2838,7 +2865,7 @@ export default function Presentation() {
         </div>
 
         {/* Slide Content */}
-        <div className="flex-1 relative w-full h-full perspective-1000 mt-4">
+        <div className="flex-1 min-h-0 relative w-full h-full mt-1 sm:mt-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -2846,7 +2873,7 @@ export default function Presentation() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98, y: -15 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute inset-0 w-full h-full flex flex-col"
+              className="absolute inset-0 w-full h-full flex flex-col overflow-y-auto overflow-x-hidden custom-scrollbar"
             >
               {slides[currentSlide].content}
             </motion.div>
@@ -2856,29 +2883,31 @@ export default function Presentation() {
       </div>
 
       {/* Footer Navigation */}
-      <div className="relative z-50 border-t border-slate-200 bg-white/80 backdrop-blur-xl py-4 px-8 flex justify-between items-center shadow-[0_-10px_30px_rgba(0,0,0,0.03)]">
-        <div className="flex items-center space-x-4">
-          <img src="/mls_logo_01.png" alt="Logo mini" className="h-8 w-auto drop-shadow-sm" />
-          <div className="h-6 w-px bg-slate-300"></div>
-          <div className="text-sm font-bold text-slate-500 tracking-wide">
-            Slide {currentSlide + 1} <span className="mx-1 font-normal opacity-50">/</span> {slides.length}
+      <div className="relative z-50 border-t border-slate-200 bg-white/80 backdrop-blur-xl py-2 px-4 sm:py-4 sm:px-8 flex justify-between items-center shadow-[0_-10px_30px_rgba(0,0,0,0.03)] shrink-0">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <img src="/mls_logo_01.png" alt="Logo mini" className="h-6 sm:h-8 w-auto drop-shadow-sm" />
+          <div className="h-4 sm:h-6 w-px bg-slate-300"></div>
+          <div className="text-xs sm:text-sm font-bold text-slate-500 tracking-wide">
+            {currentSlide + 1} <span className="mx-0.5 sm:mx-1 font-normal opacity-50">/</span> {slides.length}
           </div>
         </div>
 
-        <div className="flex space-x-3">
+        <div className="flex space-x-2 sm:space-x-3">
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className="p-3 rounded-2xl bg-white border border-slate-300 text-slate-600 hover:bg-slate-50 hover:text-teal-600 hover:border-teal-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-300 disabled:cursor-not-allowed transition-all shadow-sm"
+            className="p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-white border border-slate-300 text-slate-600 hover:bg-slate-50 hover:text-teal-600 hover:border-teal-300 disabled:opacity-40 disabled:hover:bg-white disabled:hover:border-slate-300 disabled:cursor-not-allowed transition-all shadow-sm"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={16} className="sm:hidden" />
+            <ChevronLeft size={20} className="hidden sm:block" />
           </button>
           <button
             onClick={nextSlide}
             disabled={currentSlide === slides.length - 1}
-            className="p-3 rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 border border-transparent text-white hover:from-teal-400 hover:to-emerald-400 shadow-md shadow-teal-500/30 disabled:opacity-40 disabled:shadow-none disabled:hover:from-teal-500 disabled:hover:to-emerald-500 disabled:cursor-not-allowed transition-all"
+            className="p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-teal-500 to-emerald-500 border border-transparent text-white hover:from-teal-400 hover:to-emerald-400 shadow-md shadow-teal-500/30 disabled:opacity-40 disabled:shadow-none disabled:hover:from-teal-500 disabled:hover:to-emerald-500 disabled:cursor-not-allowed transition-all"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={16} className="sm:hidden" />
+            <ChevronRight size={20} className="hidden sm:block" />
           </button>
         </div>
       </div>

@@ -1605,6 +1605,298 @@ const SlidePaperlessOffice = () => (
     </div>
   </div>
 );
+
+const SlideCommandCenter = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4">
+    <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed mb-4 max-w-4xl">
+      Pusat kendali strategis langsung di genggaman <strong className="text-teal-600">Bupati &amp; Wakil Bupati</strong>. Seluruh indikator kunci daerah terkonsolidasi dalam satu tampilan real-time untuk pengambilan keputusan cepat dan akurat.
+    </p>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-y-auto pb-6 custom-scrollbar">
+      <motion.div whileHover={{ scale: 1.02 }} className="sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-slate-900 to-slate-800 p-5 sm:p-6 rounded-[28px] shadow-2xl text-white relative overflow-hidden group">
+        <div className="absolute -right-10 -bottom-10 opacity-10 group-hover:opacity-20 transition-opacity">
+          <Coins size={150} />
+        </div>
+        <div className="flex items-center space-x-3 mb-3 relative z-10">
+          <div className="bg-amber-500/20 p-2.5 rounded-xl backdrop-blur-md">
+            <Coins className="text-amber-400" size={22} />
+          </div>
+          <div>
+            <h4 className="text-white font-bold text-sm">Realisasi APBD 2026</h4>
+            <p className="text-slate-400 text-[10px]">Pendapatan &bull; Belanja &bull; Pembiayaan</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-3 relative z-10 mt-4">
+          <div className="bg-white/5 p-3 rounded-xl border border-white/10">
+            <div className="text-[10px] text-slate-400 uppercase font-bold mb-1">PAD</div>
+            <div className="text-lg sm:text-xl font-black text-amber-400">Rp 482M</div>
+            <div className="text-[10px] text-emerald-400 font-bold mt-1">82.4% Target</div>
+          </div>
+          <div className="bg-white/5 p-3 rounded-xl border border-white/10">
+            <div className="text-[10px] text-slate-400 uppercase font-bold mb-1">Belanja</div>
+            <div className="text-lg sm:text-xl font-black text-cyan-400">Rp 3.2T</div>
+            <div className="text-[10px] text-amber-400 font-bold mt-1">68.1% Serapan</div>
+          </div>
+          <div className="bg-white/5 p-3 rounded-xl border border-white/10">
+            <div className="text-[10px] text-slate-400 uppercase font-bold mb-1">SiLPA</div>
+            <div className="text-lg sm:text-xl font-black text-emerald-400">Rp 85M</div>
+            <div className="text-[10px] text-slate-400 font-bold mt-1">Terkendali</div>
+          </div>
+        </div>
+        <div className="mt-4 relative z-10">
+          <div className="flex justify-between text-[10px] text-slate-400 font-bold mb-1">
+            <span>Serapan Anggaran Total</span>
+            <span className="text-emerald-400">68.1%</span>
+          </div>
+          <div className="w-full bg-slate-700 rounded-full h-2">
+            <div className="bg-gradient-to-r from-amber-400 to-emerald-400 h-2 rounded-full w-[68%] shadow-[0_0_10px_rgba(52,211,153,0.4)]"></div>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div whileHover={{ y: -5 }} className="bg-white p-5 rounded-[28px] shadow-xl border border-slate-100 flex flex-col group">
+        <div className="flex items-center space-x-3 mb-4">
+          <div className="bg-teal-50 p-2.5 rounded-xl">
+            <Globe className="text-teal-600" size={20} />
+          </div>
+          <h4 className="text-slate-800 font-black text-xs uppercase tracking-tight">Status E-Gov Services</h4>
+        </div>
+        <div className="space-y-3 flex-1">
+          {[
+            { name: "SSO & Login", status: "Online", color: "bg-emerald-500" },
+            { name: "E-Office", status: "Online", color: "bg-emerald-500" },
+            { name: "Pengaduan", status: "Online", color: "bg-emerald-500" },
+            { name: "E-Budgeting", status: "Maintenance", color: "bg-amber-500" },
+          ].map((s, i) => (
+            <div key={i} className="flex items-center justify-between text-xs">
+              <span className="text-slate-600 font-medium">{s.name}</span>
+              <div className="flex items-center space-x-1.5">
+                <span className={`w-2 h-2 rounded-full ${s.color}`}></span>
+                <span className="font-bold text-slate-700">{s.status}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 pt-3 border-t border-slate-100 text-[10px] text-emerald-600 font-bold">
+          Uptime: 99.9% (30 hari terakhir)
+        </div>
+      </motion.div>
+
+      <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-cyan-50 to-teal-50 p-5 rounded-[28px] shadow-xl border border-cyan-100 flex flex-col group">
+        <div className="flex items-center space-x-3 mb-3">
+          <div className="bg-cyan-100 p-2.5 rounded-xl">
+            <Map className="text-cyan-700" size={20} />
+          </div>
+          <h4 className="text-slate-800 font-black text-xs uppercase tracking-tight">Sebaran Proyek Aktif</h4>
+        </div>
+        <div className="grid grid-cols-2 gap-2 flex-1">
+          {[
+            { kec: "Majalengka", jumlah: 24 },
+            { kec: "Kadipaten", jumlah: 18 },
+            { kec: "Kertajati", jumlah: 31 },
+            { kec: "Jatiwangi", jumlah: 15 },
+          ].map((k, i) => (
+            <div key={i} className="bg-white/70 p-2.5 rounded-xl border border-cyan-100">
+              <div className="text-[10px] text-slate-500 font-bold uppercase">{k.kec}</div>
+              <div className="text-lg font-black text-slate-800">{k.jumlah}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 text-[10px] text-cyan-700 font-bold">Total: 156 Proyek di 26 Kecamatan</div>
+      </motion.div>
+
+      <motion.div whileHover={{ y: -5 }} className="bg-white p-5 rounded-[28px] shadow-xl border border-slate-100 flex flex-col group">
+        <div className="flex items-center space-x-3 mb-3">
+          <div className="bg-rose-50 p-2.5 rounded-xl">
+            <Megaphone className="text-rose-600" size={20} />
+          </div>
+          <h4 className="text-slate-800 font-black text-xs uppercase tracking-tight">Aspirasi &amp; Pengaduan</h4>
+        </div>
+        <div className="space-y-3 flex-1">
+          <div className="flex items-end justify-between">
+            <div>
+              <div className="text-2xl font-black text-slate-800">1,248</div>
+              <div className="text-[10px] text-slate-400 font-bold uppercase">Total Laporan (2026)</div>
+            </div>
+            <div className="text-right">
+              <div className="text-lg font-black text-emerald-600">89%</div>
+              <div className="text-[10px] text-slate-400 font-bold">Tertangani</div>
+            </div>
+          </div>
+          <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+            <div className="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full w-[89%]"></div>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div whileHover={{ scale: 1.01 }} className="sm:col-span-2 lg:col-span-3 bg-white p-5 rounded-[28px] shadow-xl border border-slate-100 flex flex-col group">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-3">
+            <div className="bg-indigo-50 p-2.5 rounded-xl">
+              <Activity className="text-indigo-500" size={20} />
+            </div>
+            <div>
+              <h4 className="text-slate-700 font-bold text-xs tracking-wide">Leaderboard Kinerja Instansi (IKU)</h4>
+              <span className="text-[10px] text-slate-400">SAKIP &amp; SIMDA terkonsolidasi</span>
+            </div>
+          </div>
+          <span className="text-[10px] font-black bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full uppercase hidden sm:inline-block">Live</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+          {[
+            { name: "Dinkes", score: 92, grade: "A" },
+            { name: "Disdik", score: 89, grade: "A" },
+            { name: "Diskominfo", score: 87, grade: "A" },
+            { name: "DPMPTSP", score: 85, grade: "B+" },
+            { name: "Bapenda", score: 83, grade: "B+" },
+          ].map((opd, i) => (
+            <div key={i} className="bg-slate-50 p-3 rounded-xl border border-slate-100">
+              <div className="flex justify-between text-[10px] font-bold text-slate-700 mb-1">
+                <span className="truncate">{i + 1}. {opd.name}</span>
+                <span className="text-emerald-500 shrink-0 ml-1">{opd.grade}</span>
+              </div>
+              <div className="w-full bg-slate-200 rounded-full h-1.5">
+                <div className="bg-emerald-500 h-1.5 rounded-full" style={{ width: `${opd.score}%` }}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+const SlideEarlyWarning = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4">
+    <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed mb-4 max-w-4xl">
+      Sistem peringatan dini dan respons kedaruratan terintegrasi langsung ke dashboard Kepala Daerah. Notifikasi otomatis dan protokol eskalasi berbasis AI memastikan respons <strong className="text-red-600">kurang dari 15 menit</strong>.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 overflow-y-auto pb-6 custom-scrollbar">
+      <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-red-50 to-orange-50 p-5 sm:p-6 rounded-[28px] shadow-xl border border-red-100 flex flex-col group relative overflow-hidden">
+        <div className="absolute -right-6 -top-6 opacity-5 group-hover:opacity-10 transition-opacity">
+          <AlertTriangle size={120} />
+        </div>
+        <div className="flex items-center space-x-3 mb-4 relative z-10">
+          <div className="bg-red-100 p-3 rounded-xl">
+            <AlertTriangle className="text-red-600" size={22} />
+          </div>
+          <div>
+            <h4 className="text-red-900 font-black text-sm">Early Warning System (EWS)</h4>
+            <p className="text-red-600 text-[10px] font-bold uppercase tracking-wider">Cuaca &bull; Banjir &bull; Longsor &bull; Gempa</p>
+          </div>
+        </div>
+        <div className="space-y-3 relative z-10">
+          {[
+            { lokasi: "Kec. Argapura", status: "Siaga 2", detail: "Curah hujan >100mm/hari. Broadcast mitigasi otomatis ke 5KM radius.", level: "bg-red-500" },
+            { lokasi: "Kec. Lemahsugih", status: "Waspada", detail: "Level sungai naik 40cm. Monitoring sensor IoT aktif.", level: "bg-amber-500" },
+            { lokasi: "Kec. Bantarujeg", status: "Normal", detail: "Semua sensor dalam batas aman. Patroli rutin berjalan.", level: "bg-emerald-500" },
+          ].map((alert, i) => (
+            <div key={i} className="bg-white p-3 rounded-xl border border-red-50 relative overflow-hidden">
+              <div className={`absolute left-0 top-0 bottom-0 w-1 ${alert.level}`}></div>
+              <div className="ml-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-xs font-black text-slate-800">{alert.lokasi}</span>
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full text-white ${alert.level}`}>{alert.status}</span>
+                </div>
+                <p className="text-[10px] text-slate-500 font-medium leading-tight">{alert.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div whileHover={{ y: -5 }} className="bg-slate-900 p-5 sm:p-6 rounded-[28px] shadow-2xl text-white flex flex-col group relative overflow-hidden">
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex items-center space-x-3">
+            <div className="bg-white/10 p-2.5 rounded-xl backdrop-blur-md">
+              <Video className="text-slate-300" size={20} />
+            </div>
+            <div>
+              <h4 className="text-white font-black text-sm">Pantauan CCTV AI</h4>
+              <p className="text-slate-400 text-[10px] font-bold uppercase">Trafik &bull; Keamanan &bull; Bencana</p>
+            </div>
+          </div>
+          <span className="flex h-2.5 w-2.5 relative">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-2 flex-1 mb-4">
+          {["Bunderan Munjul", "Alun-Alun", "Bandara BIJB", "Pasar Talaga"].map((loc, i) => (
+            <div key={i} className="bg-black/40 border border-slate-700 rounded-xl flex items-end p-2 min-h-[60px] relative">
+              <div className="absolute top-1.5 right-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block"></span>
+              </div>
+              <span className="text-[9px] text-emerald-400 font-mono">{loc}</span>
+            </div>
+          ))}
+        </div>
+        <div className="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center justify-between">
+          <div className="text-[10px] text-slate-400">
+            <span className="font-bold text-white">48</span> Kamera Aktif
+          </div>
+          <div className="text-emerald-400 text-[10px] font-mono bg-black/30 px-2 py-0.5 rounded border border-emerald-500/30">LIVE</div>
+        </div>
+      </motion.div>
+
+      <motion.div whileHover={{ y: -5 }} className="bg-white p-5 sm:p-6 rounded-[28px] shadow-xl border border-slate-100 flex flex-col group">
+        <div className="flex items-center space-x-3 mb-4">
+          <div className="bg-indigo-50 p-2.5 rounded-xl">
+            <ArrowRightCircle className="text-indigo-600" size={20} />
+          </div>
+          <h4 className="text-slate-800 font-black text-sm">Protokol Eskalasi Otomatis</h4>
+        </div>
+        <div className="space-y-3">
+          {[
+            { step: 1, label: "Sensor IoT / Laporan Warga", time: "0 Detik", color: "bg-blue-500" },
+            { step: 2, label: "Notifikasi OPD + BPBD", time: "< 5 Menit", color: "bg-cyan-500" },
+            { step: 3, label: "Alert Dashboard Bupati/Wabup", time: "< 10 Menit", color: "bg-teal-500" },
+            { step: 4, label: "Broadcast Warga via Super App", time: "< 15 Menit", color: "bg-emerald-500" },
+          ].map((p, i) => (
+            <div key={i} className="flex items-center space-x-3">
+              <div className={`w-8 h-8 rounded-full ${p.color} text-white flex items-center justify-center text-xs font-black shrink-0`}>{p.step}</div>
+              <div className="flex-1 bg-slate-50 p-2.5 rounded-xl">
+                <div className="text-xs font-bold text-slate-700">{p.label}</div>
+              </div>
+              <span className="text-[10px] font-black text-slate-400 shrink-0">{p.time}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-teal-700 to-emerald-800 p-5 sm:p-6 rounded-[28px] shadow-2xl text-white flex flex-col group relative overflow-hidden">
+        <div className="absolute -right-8 -bottom-8 opacity-10">
+          <Shield size={120} />
+        </div>
+        <div className="flex items-center space-x-3 mb-4 relative z-10">
+          <div className="bg-white/10 p-2.5 rounded-xl backdrop-blur-md">
+            <Shield className="text-emerald-300" size={20} />
+          </div>
+          <h4 className="text-white font-black text-sm">Statistik Kedaruratan 2026</h4>
+        </div>
+        <div className="grid grid-cols-2 gap-3 flex-1 relative z-10">
+          <div className="bg-white/5 p-3 rounded-xl border border-white/10">
+            <div className="text-2xl font-black text-emerald-400">23</div>
+            <div className="text-[10px] text-emerald-200 font-bold uppercase">Kejadian Tertangani</div>
+          </div>
+          <div className="bg-white/5 p-3 rounded-xl border border-white/10">
+            <div className="text-2xl font-black text-emerald-400">&lt;12m</div>
+            <div className="text-[10px] text-emerald-200 font-bold uppercase">Avg Response Time</div>
+          </div>
+          <div className="bg-white/5 p-3 rounded-xl border border-white/10">
+            <div className="text-2xl font-black text-emerald-400">0</div>
+            <div className="text-[10px] text-emerald-200 font-bold uppercase">Korban Jiwa</div>
+          </div>
+          <div className="bg-white/5 p-3 rounded-xl border border-white/10">
+            <div className="text-2xl font-black text-emerald-400">100%</div>
+            <div className="text-[10px] text-emerald-200 font-bold uppercase">Evakuasi Berhasil</div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
 // Data Slides
 const slides = [
   {
@@ -1627,6 +1919,20 @@ const slides = [
     subtitle: "Indikator Utama Pembangunan & Capaian Sektoral (Real-Time)",
     content: <SlideExecutiveMacroDashboard />,
     icon: <PieChart className="text-cyan-500" />,
+  },
+  {
+    id: "command-center",
+    title: "Pusat Kendali Makro Bupati & Wakil Bupati",
+    subtitle: "APBD, Kinerja OPD, E-Gov Status & Aspirasi Publik Real-Time",
+    content: <SlideCommandCenter />,
+    icon: <LayoutDashboard className="text-indigo-500" />,
+  },
+  {
+    id: "early-warning",
+    title: "Sistem Kedaruratan & Early Warning",
+    subtitle: "Pemantauan Bencana, CCTV AI & Protokol Eskalasi Otomatis",
+    content: <SlideEarlyWarning />,
+    icon: <AlertTriangle className="text-red-500" />,
   },
   {
     id: "janji-politik",

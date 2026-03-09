@@ -1914,27 +1914,6 @@ const slides = [
     icon: <Landmark className="text-emerald-500" />,
   },
   {
-    id: "executive-macro-dashboard",
-    title: "Executive Macro Dashboard",
-    subtitle: "Indikator Utama Pembangunan & Capaian Sektoral (Real-Time)",
-    content: <SlideExecutiveMacroDashboard />,
-    icon: <PieChart className="text-cyan-500" />,
-  },
-  {
-    id: "command-center",
-    title: "Pusat Kendali Makro Bupati & Wakil Bupati",
-    subtitle: "APBD, Kinerja OPD, E-Gov Status & Aspirasi Publik Real-Time",
-    content: <SlideCommandCenter />,
-    icon: <LayoutDashboard className="text-indigo-500" />,
-  },
-  {
-    id: "early-warning",
-    title: "Sistem Kedaruratan & Early Warning",
-    subtitle: "Pemantauan Bencana, CCTV AI & Protokol Eskalasi Otomatis",
-    content: <SlideEarlyWarning />,
-    icon: <AlertTriangle className="text-red-500" />,
-  },
-  {
     id: "janji-politik",
     title: "Visi & Janji Politik Pimpinan",
     subtitle: "H. Eman Suherman, S.H. & Dena Muhamad Ramdhan",
@@ -2058,61 +2037,25 @@ const slides = [
     icon: <LayoutDashboard className="text-teal-500" />,
   },
   {
-    id: "ux-mockup",
-    title: "Pengalaman Pengguna Langkung Sae",
-    subtitle: "Antarmuka Modern, Inklusif, dan Responsif",
-    content: (
-      <div className="flex flex-col lg:flex-row items-center justify-between h-full relative z-10 w-full gap-12 pt-4">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          className="lg:w-1/2 space-y-8"
-        >
-          <div className="space-y-4">
-            <h3 className="text-4xl font-extrabold text-slate-800 leading-tight">
-              Satu Genggaman untuk <span className="text-teal-600">Semua Layanan</span>
-            </h3>
-            <p className="text-slate-600 font-medium text-lg leading-relaxed">
-              Didesain dengan pendekatan <strong className="text-slate-800 font-bold">User-Centric</strong>, memastikan kemudahan akses bagi seluruh lapisan masyarakat Majalengka, dari petani hingga pelaku usaha.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { title: "Clean UI/UX", desc: "Navigasi intuitif dengan palet warna yang menenangkan.", icon: <Smartphone className="text-teal-600" /> },
-              { title: "Quick Access", desc: "Akses fitur utama kurang dari 3 kali klik.", icon: <Zap className="text-teal-600" /> },
-              { title: "Data Driven", desc: "Personalisasi layanan berdasarkan kebutuhan warga.", icon: <Globe size={20} className="text-teal-600" /> },
-              { title: "Inklusif", desc: "Mendukung fitur aksesibilitas bagi semua warga.", icon: <Users size={20} className="text-teal-600" /> }
-            ].map((item, i) => (
-              <div key={i} className="flex items-start space-x-3 bg-white p-4 rounded-3xl shadow-sm border border-slate-50">
-                <div className="bg-teal-50 p-2 rounded-xl shrink-0">{item.icon}</div>
-                <div>
-                  <h4 className="font-bold text-slate-800 text-sm">{item.title}</h4>
-                  <p className="text-slate-500 text-xs">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="lg:w-1/2 flex justify-center"
-        >
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-teal-500/20 to-cyan-500/20 rounded-[60px] blur-2xl group-hover:opacity-100 transition-opacity duration-500 opacity-70"></div>
-            <img
-              src="/majalengka_superapp_mockup_1773070339752.png"
-              alt="Mobile App Mockup"
-              className="relative w-full max-w-sm h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] rounded-[40px] transform group-hover:rotate-1 transition-transform duration-500"
-            />
-          </div>
-        </motion.div>
-      </div>
-    ),
-    icon: <Smartphone className="text-teal-500" />,
+    id: "executive-macro-dashboard",
+    title: "Executive Macro Dashboard",
+    subtitle: "Indikator Utama Pembangunan & Capaian Sektoral (Real-Time)",
+    content: <SlideExecutiveMacroDashboard />,
+    icon: <PieChart className="text-cyan-500" />,
+  },
+  {
+    id: "command-center",
+    title: "Pusat Kendali Makro Bupati & Wakil Bupati",
+    subtitle: "APBD, Kinerja OPD, E-Gov Status & Aspirasi Publik Real-Time",
+    content: <SlideCommandCenter />,
+    icon: <LayoutDashboard className="text-indigo-500" />,
+  },
+  {
+    id: "early-warning",
+    title: "Sistem Kedaruratan & Early Warning",
+    subtitle: "Pemantauan Bencana, CCTV AI & Protokol Eskalasi Otomatis",
+    content: <SlideEarlyWarning />,
+    icon: <AlertTriangle className="text-red-500" />,
   },
   {
     id: "arsitektur",
@@ -2140,20 +2083,6 @@ const slides = [
       </div>
     ),
     icon: <Cpu className="text-teal-500" />,
-  },
-  {
-    id: "sistem-internal-opd",
-    title: "Sistem Internal OPD Terintegrasi",
-    subtitle: "E-Planning, E-Budgeting, E-Monitoring & SSO Terpusat",
-    content: <SlideSistemInternalOPD />,
-    icon: <Network className="text-indigo-500" />,
-  },
-  {
-    id: "paperless-office",
-    title: "Paperless Office & Tanda Tangan Digital",
-    subtitle: "Transformasi Birokrasi Zero Paper dengan TTE BSrE",
-    content: <SlidePaperlessOffice />,
-    icon: <FileText className="text-teal-500" />,
   },
   {
     id: "integrasi-opd",
@@ -2330,6 +2259,20 @@ const slides = [
       </div>
     ),
     icon: <Workflow className="text-cyan-500" />,
+  },
+  {
+    id: "sistem-internal-opd",
+    title: "Sistem Internal OPD Terintegrasi",
+    subtitle: "E-Planning, E-Budgeting, E-Monitoring & SSO Terpusat",
+    content: <SlideSistemInternalOPD />,
+    icon: <Network className="text-indigo-500" />,
+  },
+  {
+    id: "paperless-office",
+    title: "Paperless Office & Tanda Tangan Digital",
+    subtitle: "Transformasi Birokrasi Zero Paper dengan TTE BSrE",
+    content: <SlidePaperlessOffice />,
+    icon: <FileText className="text-teal-500" />,
   },
   {
     id: "executive-dashboard",
@@ -2515,6 +2458,110 @@ const slides = [
     icon: <Activity className="text-emerald-500" />,
   },
   {
+    id: "klaster-1-2",
+    title: "Modul Layanan (1 & 2)",
+    subtitle: "Sosial, SDM, & Infrastruktur",
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-start pt-6 relative z-10">
+        <motion.div whileHover={{ scale: 1.01 }} className="space-y-6 bg-white border border-slate-100 shadow-xl shadow-slate-200/40 p-8 rounded-3xl transition-transform">
+          <div className="flex items-center space-x-4 border-b border-slate-100 pb-5">
+            <div className="bg-emerald-50 p-4 rounded-2xl ring-1 ring-emerald-100"><Users className="text-emerald-500" size={28} /></div>
+            <div>
+              <h3 className="text-2xl font-extrabold text-slate-800">Klaster I: Sejahtera</h3>
+              <p className="text-sm text-emerald-600 font-bold tracking-wide uppercase mt-1">Sosial & SDM</p>
+            </div>
+          </div>
+          <ul className="space-y-4">
+            {[
+              { title: "Majalengka Pintar:", desc: "Sistem seleksi beasiswa AI & LMS." },
+              { title: "Sehat Bareng:", desc: "Telemedicine & Stunting Tracking real-time." },
+              { title: "Ramah Keluarga:", desc: "Digital Crisis Portal perlindungan perempuan & anak." },
+              { title: "Digitalisasi Religi:", desc: "Administrasi Guru Ngaji dan Marbot." }
+            ].map((item, i) => (
+              <li key={i} className="flex items-start group">
+                <CheckCircle2 className="text-emerald-500 mr-4 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <div className="text-slate-600"><span className="font-bold text-slate-800">{item.title}</span> {item.desc}</div>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        <motion.div whileHover={{ scale: 1.01 }} className="space-y-6 bg-white border border-slate-100 shadow-xl shadow-slate-200/40 p-8 rounded-3xl transition-transform">
+          <div className="flex items-center space-x-4 border-b border-slate-100 pb-5">
+            <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100"><MapPin className="text-cyan-600" size={28} /></div>
+            <div>
+              <h3 className="text-2xl font-extrabold text-slate-800">Klaster II: Mulus & Terang</h3>
+              <p className="text-sm text-cyan-600 font-bold tracking-wide uppercase mt-1">Infrastruktur</p>
+            </div>
+          </div>
+          <ul className="space-y-4">
+            {[
+              { title: "URC Mobile Field App:", desc: "Lapor jalan rusak/drainase mampet via foto GPS." },
+              { title: "Majalengka Caang:", desc: "Dashboard IoT kendali lampu jalan." },
+              { title: "MaaS Kertajati Hub:", desc: "Integrasi angkutan dengan bandara BIJB." }
+            ].map((item, i) => (
+              <li key={i} className="flex items-start group">
+                <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <div className="text-slate-600"><span className="font-bold text-slate-800">{item.title}</span> {item.desc}</div>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
+    ),
+    icon: <Layout className="text-cyan-500" />,
+  },
+  {
+    id: "klaster-3-4-5",
+    title: "Modul Layanan (3, 4 & 5)",
+    subtitle: "Ekonomi, Birokrasi & Fiskal",
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full items-start pt-4 relative z-10 w-full text-sm">
+
+        {[
+          {
+            title: "Berdikari", icon: <Briefcase className="text-cyan-500" />, bgIcon: "bg-cyan-50", ring: "ring-cyan-100", color: "bg-cyan-500", items: [
+              { strong: "Kertajati Bekerja:", text: "AI Labor Market match." },
+              { strong: "UMKM Go Digital:", text: "E-commerce & ERP lokal." },
+              { strong: "Wisata Juara:", text: "AR Tourism Map interaktif." }
+            ]
+          },
+          {
+            title: "Terbuka", icon: <Layout className="text-teal-500" />, bgIcon: "bg-teal-50", ring: "ring-teal-100", color: "bg-teal-500", items: [
+              { strong: "Omnichannel:", text: "Integrasi keluhan WA, IG, Web." },
+              { strong: "Gen-AI Chatbot:", text: "Asisten virtual 24 jam." },
+              { strong: "Blockchain E-Office:", text: "Persuratan aman & presensi." }
+            ]
+          },
+          {
+            title: "Bersih", icon: <Shield className="text-emerald-500" />, bgIcon: "bg-emerald-50", ring: "ring-emerald-100", color: "bg-emerald-500", items: [
+              { strong: "Pajak Tepat:", text: "AI Drone/Satelit untuk PBB." },
+              { strong: "Cloud Tapping Box:", text: "Cegah kebocoran pajak hotel." },
+              { strong: "E-Audit AI:", text: "Deteksi anomali anggaran." }
+            ]
+          }
+        ].map((klaster, idx) => (
+          <motion.div key={idx} whileHover={{ y: -5 }} className="bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col h-full transition-transform">
+            <div className="flex items-center space-x-4 mb-6">
+              <div className={`${klaster.bgIcon} p-3 rounded-2xl ring-1 ${klaster.ring}`}>{klaster.icon}</div>
+              <h3 className="text-xl font-extrabold text-slate-800">Klaster {idx + 3}: {klaster.title}</h3>
+            </div>
+            <ul className="space-y-5 text-slate-600">
+              {klaster.items.map((item, i) => (
+                <li key={i} className="flex items-start bg-slate-50/50 p-2 rounded-xl">
+                  <span className={`w-2 h-2 mt-1.5 ${klaster.color} rounded-full mr-3 shrink-0 shadow-sm`}></span>
+                  <span className="leading-relaxed"><strong className="text-slate-800">{item.strong}</strong> <br className="hidden lg:block" /> {item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+
+      </div>
+    ),
+    icon: <Briefcase className="text-teal-500" />,
+  },
+  {
     id: "fitur-inovasi",
     title: "Ekosistem Fitur & Inovasi Futuristik",
     subtitle: "Teknologi Terdepan untuk Pelayanan Maksimal",
@@ -2659,57 +2706,55 @@ const slides = [
     icon: <Sprout className="text-emerald-500" />,
   },
   {
-    id: "keamanan-data",
-    title: "Keamanan & Privasi Data Terpadu",
-    subtitle: "Perlindungan Mutlak bagi Seluruh Warga",
+    id: "layanan-informasi",
+    title: "Pusat Layanan & Informasi Terpadu",
+    subtitle: "Akses Mudah untuk Kebutuhan Sehari-hari",
     content: (
-      <div className="flex flex-col h-full relative z-10 w-full mt-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="space-y-6">
-            <p className="text-slate-600 font-medium text-lg leading-relaxed">
-              Kami memahami bahwa <strong className="text-teal-600">Keamanan</strong> adalah pondasi kepercayaan publik. Majalengka Langkung Sae mengadopsi standar keamanan internasional untuk menjaga integritas data setiap individu.
-            </p>
-
-            <div className="space-y-4">
-              {[
-                { title: "Enkripsi End-to-End", desc: "Data sensitif warga dienkripsi sejak dari perangkat hingga tersimpan di server.", icon: <Lock className="text-teal-600" /> },
-                { title: "Autentikasi Biometrik", desc: "Login aman menggunakan Sidik Jari atau Wajah untuk mencegah akses ilegal.", icon: <ShieldCheck className="text-teal-600" /> },
-                { title: "Audit BSSN Berkala", desc: "Penilaian keamanan rutin oleh Badan Siber dan Sandi Negara.", icon: <Award className="text-teal-600" /> }
-              ].map((item, i) => (
-                <div key={i} className="flex items-start space-x-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-                  <div className="bg-teal-50 p-2 rounded-xl shrink-0">{item.icon}</div>
-                  <div>
-                    <h4 className="font-extrabold text-slate-800 text-sm">{item.title}</h4>
-                    <p className="text-slate-500 text-xs font-medium">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 h-full relative z-10 w-full">
+        {/* Kolom Kiri: Layanan Publik & e-Payment */}
+        <div className="space-y-6">
+          <motion.div whileHover={{ x: 5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100 group-hover:bg-cyan-100 transition-colors"><FileText className="text-cyan-600" size={24} /></div>
+              <h3 className="text-xl font-extrabold text-slate-800">Administrasi Publik</h3>
             </div>
+            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Pengurusan dokumen kependudukan, perizinan usaha, dan surat keterangan secara digital tanpa antre.</p>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} className="relative bg-slate-900 rounded-[40px] p-8 overflow-hidden flex flex-col items-center justify-center text-center group">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-transparent"></div>
-            <div className="relative z-10 w-32 h-32 bg-teal-500/20 rounded-full flex items-center justify-center mb-6 ring-4 ring-teal-500/30 group-hover:scale-110 transition-transform duration-500">
-              <ShieldCheck size={64} className="text-teal-400" />
+          <motion.div whileHover={{ x: 5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="bg-teal-50 p-4 rounded-2xl ring-1 ring-teal-100 group-hover:bg-teal-100 transition-colors"><CreditCard className="text-teal-600" size={24} /></div>
+              <h3 className="text-xl font-extrabold text-slate-800">Majalengka Pay (E-Payment)</h3>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2 relative z-10">Cyber Security Center</h3>
-            <p className="text-slate-400 text-sm max-w-xs relative z-10">Monitoring trafik dan anomali 24/7 oleh tim khusus Diskominfo Majalengka.</p>
+            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Sistem pembayaran retribusi daerah, tagihan PDAM, PBB, hingga transaksi pasar tradisional via QRIS lokal.</p>
+          </motion.div>
+        </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 w-full relative z-10">
-              <div className="bg-white/5 backdrop-blur-md rounded-2xl p-3 border border-white/10 text-center">
-                <div className="text-teal-400 font-extrabold text-xl">100%</div>
-                <div className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">Lokal Hosting</div>
-              </div>
-              <div className="bg-white/5 backdrop-blur-md rounded-2xl p-3 border border-white/10 text-center">
-                <div className="text-teal-400 font-extrabold text-xl">Uptime</div>
-                <div className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">99.9% / Year</div>
-              </div>
+        {/* Kolom Kanan: Pusat Informasi & Interaksi */}
+        <div className="space-y-6">
+          <motion.div whileHover={{ x: -5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="bg-emerald-50 p-4 rounded-2xl ring-1 ring-emerald-100 group-hover:bg-emerald-100 transition-colors"><Info className="text-emerald-600" size={24} /></div>
+              <h3 className="text-xl font-extrabold text-slate-800">Portal Informasi Real-time</h3>
             </div>
+            <ul className="space-y-2 font-medium text-slate-600 ml-[4.5rem] list-disc pl-4 leading-relaxed">
+              <li>Pembaruan harga komoditas pangan pasar.</li>
+              <li>Informasi cuaca khusus pertanian.</li>
+              <li>Jadwal event budaya & loker Purna-TKI.</li>
+            </ul>
+          </motion.div>
+
+          <motion.div whileHover={{ x: -5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="bg-green-50 p-4 rounded-2xl ring-1 ring-green-100 group-hover:bg-green-100 transition-colors"><MessageSquare className="text-green-600" size={24} /></div>
+              <h3 className="text-xl font-extrabold text-slate-800">Ruang Partisipasi Warga</h3>
+            </div>
+            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Fitur e-Polling pelibatan warga dalam perencanaan desa & diskusi terbuka bersama dinas terkait.</p>
           </motion.div>
         </div>
       </div>
     ),
-    icon: <ShieldCheck className="text-teal-500" />,
+    icon: <Info className="text-teal-500" />,
   },
   {
     id: "landasan-hukum",
@@ -2790,7 +2835,6 @@ const slides = [
     ),
     icon: <BookOpen className="text-rose-500" />,
   },
-
   {
     id: "infrastruktur",
     title: "Pondasi Infrastruktur & Jaringan",
@@ -2821,159 +2865,94 @@ const slides = [
     icon: <Server className="text-cyan-500" />,
   },
   {
-    id: "klaster-1-2",
-    title: "Modul Layanan (1 & 2)",
-    subtitle: "Sosial, SDM, & Infrastruktur",
+    id: "keamanan-data",
+    title: "Keamanan & Privasi Data Terpadu",
+    subtitle: "Perlindungan Mutlak bagi Seluruh Warga",
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-start pt-6 relative z-10">
-        <motion.div whileHover={{ scale: 1.01 }} className="space-y-6 bg-white border border-slate-100 shadow-xl shadow-slate-200/40 p-8 rounded-3xl transition-transform">
-          <div className="flex items-center space-x-4 border-b border-slate-100 pb-5">
-            <div className="bg-emerald-50 p-4 rounded-2xl ring-1 ring-emerald-100"><Users className="text-emerald-500" size={28} /></div>
-            <div>
-              <h3 className="text-2xl font-extrabold text-slate-800">Klaster I: Sejahtera</h3>
-              <p className="text-sm text-emerald-600 font-bold tracking-wide uppercase mt-1">Sosial & SDM</p>
-            </div>
-          </div>
-          <ul className="space-y-4">
-            {[
-              { title: "Majalengka Pintar:", desc: "Sistem seleksi beasiswa AI & LMS." },
-              { title: "Sehat Bareng:", desc: "Telemedicine & Stunting Tracking real-time." },
-              { title: "Ramah Keluarga:", desc: "Digital Crisis Portal perlindungan perempuan & anak." },
-              { title: "Digitalisasi Religi:", desc: "Administrasi Guru Ngaji dan Marbot." }
-            ].map((item, i) => (
-              <li key={i} className="flex items-start group">
-                <CheckCircle2 className="text-emerald-500 mr-4 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div className="text-slate-600"><span className="font-bold text-slate-800">{item.title}</span> {item.desc}</div>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+      <div className="flex flex-col h-full relative z-10 w-full mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="space-y-6">
+            <p className="text-slate-600 font-medium text-lg leading-relaxed">
+              Kami memahami bahwa <strong className="text-teal-600">Keamanan</strong> adalah pondasi kepercayaan publik. Majalengka Langkung Sae mengadopsi standar keamanan internasional untuk menjaga integritas data setiap individu.
+            </p>
 
-        <motion.div whileHover={{ scale: 1.01 }} className="space-y-6 bg-white border border-slate-100 shadow-xl shadow-slate-200/40 p-8 rounded-3xl transition-transform">
-          <div className="flex items-center space-x-4 border-b border-slate-100 pb-5">
-            <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100"><MapPin className="text-cyan-600" size={28} /></div>
-            <div>
-              <h3 className="text-2xl font-extrabold text-slate-800">Klaster II: Mulus & Terang</h3>
-              <p className="text-sm text-cyan-600 font-bold tracking-wide uppercase mt-1">Infrastruktur</p>
-            </div>
-          </div>
-          <ul className="space-y-4">
-            {[
-              { title: "URC Mobile Field App:", desc: "Lapor jalan rusak/drainase mampet via foto GPS." },
-              { title: "Majalengka Caang:", desc: "Dashboard IoT kendali lampu jalan." },
-              { title: "MaaS Kertajati Hub:", desc: "Integrasi angkutan dengan bandara BIJB." }
-            ].map((item, i) => (
-              <li key={i} className="flex items-start group">
-                <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div className="text-slate-600"><span className="font-bold text-slate-800">{item.title}</span> {item.desc}</div>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
-    ),
-    icon: <Layout className="text-cyan-500" />,
-  },
-  {
-    id: "klaster-3-4-5",
-    title: "Modul Layanan (3, 4 & 5)",
-    subtitle: "Ekonomi, Birokrasi & Fiskal",
-    content: (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full items-start pt-4 relative z-10 w-full text-sm">
-
-        {[
-          {
-            title: "Berdikari", icon: <Briefcase className="text-cyan-500" />, bgIcon: "bg-cyan-50", ring: "ring-cyan-100", color: "bg-cyan-500", items: [
-              { strong: "Kertajati Bekerja:", text: "AI Labor Market match." },
-              { strong: "UMKM Go Digital:", text: "E-commerce & ERP lokal." },
-              { strong: "Wisata Juara:", text: "AR Tourism Map interaktif." }
-            ]
-          },
-          {
-            title: "Terbuka", icon: <Layout className="text-teal-500" />, bgIcon: "bg-teal-50", ring: "ring-teal-100", color: "bg-teal-500", items: [
-              { strong: "Omnichannel:", text: "Integrasi keluhan WA, IG, Web." },
-              { strong: "Gen-AI Chatbot:", text: "Asisten virtual 24 jam." },
-              { strong: "Blockchain E-Office:", text: "Persuratan aman & presensi." }
-            ]
-          },
-          {
-            title: "Bersih", icon: <Shield className="text-emerald-500" />, bgIcon: "bg-emerald-50", ring: "ring-emerald-100", color: "bg-emerald-500", items: [
-              { strong: "Pajak Tepat:", text: "AI Drone/Satelit untuk PBB." },
-              { strong: "Cloud Tapping Box:", text: "Cegah kebocoran pajak hotel." },
-              { strong: "E-Audit AI:", text: "Deteksi anomali anggaran." }
-            ]
-          }
-        ].map((klaster, idx) => (
-          <motion.div key={idx} whileHover={{ y: -5 }} className="bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col h-full transition-transform">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className={`${klaster.bgIcon} p-3 rounded-2xl ring-1 ${klaster.ring}`}>{klaster.icon}</div>
-              <h3 className="text-xl font-extrabold text-slate-800">Klaster {idx + 3}: {klaster.title}</h3>
-            </div>
-            <ul className="space-y-5 text-slate-600">
-              {klaster.items.map((item, i) => (
-                <li key={i} className="flex items-start bg-slate-50/50 p-2 rounded-xl">
-                  <span className={`w-2 h-2 mt-1.5 ${klaster.color} rounded-full mr-3 shrink-0 shadow-sm`}></span>
-                  <span className="leading-relaxed"><strong className="text-slate-800">{item.strong}</strong> <br className="hidden lg:block" /> {item.text}</span>
-                </li>
+            <div className="space-y-4">
+              {[
+                { title: "Enkripsi End-to-End", desc: "Data sensitif warga dienkripsi sejak dari perangkat hingga tersimpan di server.", icon: <Lock className="text-teal-600" /> },
+                { title: "Autentikasi Biometrik", desc: "Login aman menggunakan Sidik Jari atau Wajah untuk mencegah akses ilegal.", icon: <ShieldCheck className="text-teal-600" /> },
+                { title: "Audit BSSN Berkala", desc: "Penilaian keamanan rutin oleh Badan Siber dan Sandi Negara.", icon: <Award className="text-teal-600" /> }
+              ].map((item, i) => (
+                <div key={i} className="flex items-start space-x-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
+                  <div className="bg-teal-50 p-2 rounded-xl shrink-0">{item.icon}</div>
+                  <div>
+                    <h4 className="font-extrabold text-slate-800 text-sm">{item.title}</h4>
+                    <p className="text-slate-500 text-xs font-medium">{item.desc}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
-        ))}
 
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} className="relative bg-slate-900 rounded-[40px] p-8 overflow-hidden flex flex-col items-center justify-center text-center group">
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/20 to-transparent"></div>
+            <div className="relative z-10 w-32 h-32 bg-teal-500/20 rounded-full flex items-center justify-center mb-6 ring-4 ring-teal-500/30 group-hover:scale-110 transition-transform duration-500">
+              <ShieldCheck size={64} className="text-teal-400" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2 relative z-10">Cyber Security Center</h3>
+            <p className="text-slate-400 text-sm max-w-xs relative z-10">Monitoring trafik dan anomali 24/7 oleh tim khusus Diskominfo Majalengka.</p>
+
+            <div className="mt-8 grid grid-cols-2 gap-4 w-full relative z-10">
+              <div className="bg-white/5 backdrop-blur-md rounded-2xl p-3 border border-white/10 text-center">
+                <div className="text-teal-400 font-extrabold text-xl">100%</div>
+                <div className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">Lokal Hosting</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-md rounded-2xl p-3 border border-white/10 text-center">
+                <div className="text-teal-400 font-extrabold text-xl">Uptime</div>
+                <div className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">99.9% / Year</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     ),
-    icon: <Briefcase className="text-teal-500" />,
+    icon: <ShieldCheck className="text-teal-500" />,
   },
   {
-    id: "layanan-informasi",
-    title: "Pusat Layanan & Informasi Terpadu",
-    subtitle: "Akses Mudah untuk Kebutuhan Sehari-hari",
+    id: "keamanan",
+    title: "Keamanan & Keberlanjutan",
+    subtitle: "Infrastruktur Bebas Kompromi",
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 h-full relative z-10 w-full">
-        {/* Kolom Kiri: Layanan Publik & e-Payment */}
-        <div className="space-y-6">
-          <motion.div whileHover={{ x: 5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100 group-hover:bg-cyan-100 transition-colors"><FileText className="text-cyan-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Administrasi Publik</h3>
-            </div>
-            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Pengurusan dokumen kependudukan, perizinan usaha, dan surat keterangan secara digital tanpa antre.</p>
-          </motion.div>
+      <div className="flex flex-col md:flex-row items-stretch justify-center h-full gap-8 relative z-10 w-full mt-6 pb-12">
+        <motion.div whileHover={{ y: -10 }} className="flex-1 bg-white border border-slate-100 p-10 rounded-3xl shadow-xl shadow-slate-200/70 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-all duration-500 group-hover:scale-110">
+            <Shield size={180} className="text-teal-600" />
+          </div>
 
-          <motion.div whileHover={{ x: 5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-teal-50 p-4 rounded-2xl ring-1 ring-teal-100 group-hover:bg-teal-100 transition-colors"><CreditCard className="text-teal-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Majalengka Pay (E-Payment)</h3>
-            </div>
-            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Sistem pembayaran retribusi daerah, tagihan PDAM, PBB, hingga transaksi pasar tradisional via QRIS lokal.</p>
-          </motion.div>
-        </div>
+          <div className="bg-teal-50 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 ring-1 ring-teal-100">
+            <Shield className="text-teal-500" size={40} />
+          </div>
+          <h2 className="text-3xl font-extrabold mb-4 text-slate-800">SOC & CSIRT</h2>
+          <p className="text-slate-600 font-medium text-lg leading-relaxed">
+            Pembentukan operasional Security Operations Center & Computer Security Incident Response Team untuk menjaga kedaulatan dan keamanan privasi data warga dari ancaman siber 24 jam penuh tanpa diinterupsi.
+          </p>
+        </motion.div>
 
-        {/* Kolom Kanan: Pusat Informasi & Interaksi */}
-        <div className="space-y-6">
-          <motion.div whileHover={{ x: -5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-emerald-50 p-4 rounded-2xl ring-1 ring-emerald-100 group-hover:bg-emerald-100 transition-colors"><Info className="text-emerald-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Portal Informasi Real-time</h3>
-            </div>
-            <ul className="space-y-2 font-medium text-slate-600 ml-[4.5rem] list-disc pl-4 leading-relaxed">
-              <li>Pembaruan harga komoditas pangan pasar.</li>
-              <li>Informasi cuaca khusus pertanian.</li>
-              <li>Jadwal event budaya & loker Purna-TKI.</li>
-            </ul>
-          </motion.div>
+        <motion.div whileHover={{ y: -10 }} className="flex-1 bg-gradient-to-br from-teal-600 to-emerald-700 border border-transparent p-10 rounded-3xl shadow-2xl shadow-emerald-900/20 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-all duration-500 group-hover:scale-110">
+            <Globe size={180} className="text-white" />
+          </div>
 
-          <motion.div whileHover={{ x: -5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-green-50 p-4 rounded-2xl ring-1 ring-green-100 group-hover:bg-green-100 transition-colors"><MessageSquare className="text-green-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Ruang Partisipasi Warga</h3>
-            </div>
-            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Fitur e-Polling pelibatan warga dalam perencanaan desa & diskusi terbuka bersama dinas terkait.</p>
-          </motion.div>
-        </div>
+          <div className="bg-white/10 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm ring-1 ring-white/30">
+            <Globe className="text-white" size={40} />
+          </div>
+          <h2 className="text-3xl font-extrabold mb-4 text-white">Kedaulatan Data</h2>
+          <p className="text-teal-50 font-medium text-lg leading-relaxed">
+            Seluruh data dienkripsi dengan standar militer (at-rest & in-transit) dan disimpan di infrastruktur daerah yang terhubung langsung dengan Pusat Data Nasional (PDN) mematuhi mandat privasi BSSN.
+          </p>
+        </motion.div>
       </div>
     ),
-    icon: <Info className="text-teal-500" />,
+    icon: <Shield className="text-emerald-500" />,
   },
   {
     id: "roadmap",
@@ -3015,41 +2994,61 @@ const slides = [
     icon: <Layout className="text-teal-500" />,
   },
   {
-    id: "keamanan",
-    title: "Keamanan & Keberlanjutan",
-    subtitle: "Infrastruktur Bebas Kompromi",
+    id: "ux-mockup",
+    title: "Pengalaman Pengguna Langkung Sae",
+    subtitle: "Antarmuka Modern, Inklusif, dan Responsif",
     content: (
-      <div className="flex flex-col md:flex-row items-stretch justify-center h-full gap-8 relative z-10 w-full mt-6 pb-12">
-        <motion.div whileHover={{ y: -10 }} className="flex-1 bg-white border border-slate-100 p-10 rounded-3xl shadow-xl shadow-slate-200/70 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-all duration-500 group-hover:scale-110">
-            <Shield size={180} className="text-teal-600" />
+      <div className="flex flex-col lg:flex-row items-center justify-between h-full relative z-10 w-full gap-12 pt-4">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          className="lg:w-1/2 space-y-8"
+        >
+          <div className="space-y-4">
+            <h3 className="text-4xl font-extrabold text-slate-800 leading-tight">
+              Satu Genggaman untuk <span className="text-teal-600">Semua Layanan</span>
+            </h3>
+            <p className="text-slate-600 font-medium text-lg leading-relaxed">
+              Didesain dengan pendekatan <strong className="text-slate-800 font-bold">User-Centric</strong>, memastikan kemudahan akses bagi seluruh lapisan masyarakat Majalengka, dari petani hingga pelaku usaha.
+            </p>
           </div>
 
-          <div className="bg-teal-50 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 ring-1 ring-teal-100">
-            <Shield className="text-teal-500" size={40} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { title: "Clean UI/UX", desc: "Navigasi intuitif dengan palet warna yang menenangkan.", icon: <Smartphone className="text-teal-600" /> },
+              { title: "Quick Access", desc: "Akses fitur utama kurang dari 3 kali klik.", icon: <Zap className="text-teal-600" /> },
+              { title: "Data Driven", desc: "Personalisasi layanan berdasarkan kebutuhan warga.", icon: <Globe size={20} className="text-teal-600" /> },
+              { title: "Inklusif", desc: "Mendukung fitur aksesibilitas bagi semua warga.", icon: <Users size={20} className="text-teal-600" /> }
+            ].map((item, i) => (
+              <div key={i} className="flex items-start space-x-3 bg-white p-4 rounded-3xl shadow-sm border border-slate-50">
+                <div className="bg-teal-50 p-2 rounded-xl shrink-0">{item.icon}</div>
+                <div>
+                  <h4 className="font-bold text-slate-800 text-sm">{item.title}</h4>
+                  <p className="text-slate-500 text-xs">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-          <h2 className="text-3xl font-extrabold mb-4 text-slate-800">SOC & CSIRT</h2>
-          <p className="text-slate-600 font-medium text-lg leading-relaxed">
-            Pembentukan operasional Security Operations Center & Computer Security Incident Response Team untuk menjaga kedaulatan dan keamanan privasi data warga dari ancaman siber 24 jam penuh tanpa diinterupsi.
-          </p>
         </motion.div>
 
-        <motion.div whileHover={{ y: -10 }} className="flex-1 bg-gradient-to-br from-teal-600 to-emerald-700 border border-transparent p-10 rounded-3xl shadow-2xl shadow-emerald-900/20 relative overflow-hidden group">
-          <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-all duration-500 group-hover:scale-110">
-            <Globe size={180} className="text-white" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="lg:w-1/2 flex justify-center"
+        >
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-teal-500/20 to-cyan-500/20 rounded-[60px] blur-2xl group-hover:opacity-100 transition-opacity duration-500 opacity-70"></div>
+            <img
+              src="/majalengka_superapp_mockup_1773070339752.png"
+              alt="Mobile App Mockup"
+              className="relative w-full max-w-sm h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] rounded-[40px] transform group-hover:rotate-1 transition-transform duration-500"
+            />
           </div>
-
-          <div className="bg-white/10 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-sm ring-1 ring-white/30">
-            <Globe className="text-white" size={40} />
-          </div>
-          <h2 className="text-3xl font-extrabold mb-4 text-white">Kedaulatan Data</h2>
-          <p className="text-teal-50 font-medium text-lg leading-relaxed">
-            Seluruh data dienkripsi dengan standar militer (at-rest & in-transit) dan disimpan di infrastruktur daerah yang terhubung langsung dengan Pusat Data Nasional (PDN) mematuhi mandat privasi BSSN.
-          </p>
         </motion.div>
       </div>
     ),
-    icon: <Shield className="text-emerald-500" />,
+    icon: <Smartphone className="text-teal-500" />,
   }
 ];
 

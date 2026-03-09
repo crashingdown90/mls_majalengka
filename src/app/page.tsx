@@ -18,6 +18,10 @@ import {
   Layers,
   MapPin,
   Users,
+  User,
+  Lock,
+  ArrowRight,
+  AlertTriangle,
   Cpu,
   Sparkles,
   Award,
@@ -43,13 +47,11 @@ import {
   Activity,
   Coins,
   Video,
-  AlertTriangle,
   TrendingDown,
   Bot,
   Zap,
   ShoppingBag,
   ShieldCheck,
-  Lock,
   Sprout,
   Wheat,
   LayoutDashboard,
@@ -2169,7 +2171,7 @@ const slides = [
             Majalengka <span className="text-teal-300">Langkung Sae</span>
           </h2>
           <p className="text-indigo-50 text-lg leading-relaxed font-medium opacity-90">
-            "Menghadirkan pemerintahan yang responsif terhadap kebutuhan masyarakat melalui optimalisasi reformasi birokrasi yang kolaboratif dan inovatif."
+            &ldquo;Menghadirkan pemerintahan yang responsif terhadap kebutuhan masyarakat melalui optimalisasi reformasi birokrasi yang kolaboratif dan inovatif.&rdquo;
           </p>
           <div className="flex items-center space-x-3 mt-4 text-teal-200 text-xs font-bold">
             <div className="px-4 py-1.5 bg-white/10 rounded-full border border-white/10">Janji Politik Prioritas</div>
@@ -2355,7 +2357,7 @@ const slides = [
               </li>
               <li className="flex items-start">
                 <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5" />
-                <span className="leading-relaxed"><strong className="text-slate-800">API Gateway Terpusat:</strong> Disdukcapil (NIK), Dinkes (Rekam Medis), Bapenda (Pajak), dan Dinsos (Bansos) saling "berbicara" di belakang layar.</span>
+                <span className="leading-relaxed"><strong className="text-slate-800">API Gateway Terpusat:</strong> Disdukcapil (NIK), Dinkes (Rekam Medis), Bapenda (Pajak), dan Dinsos (Bansos) saling &ldquo;berbicara&rdquo; di belakang layar.</span>
               </li>
             </ul>
 
@@ -3321,8 +3323,30 @@ export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (username === "Admin" && password === "MLS_MJK#2429") {
+      setIsLoggedIn(true);
+      setError("");
+    } else {
+      setError("Username atau Password salah!");
+    }
+  };
 
   const minSwipeDistance = 50;
+
+  const nextSlide = React.useCallback(() => {
+    setCurrentSlide((prev) => (prev < slides.length - 1 ? prev + 1 : prev));
+  }, []);
+
+  const prevSlide = React.useCallback(() => {
+    setCurrentSlide((prev) => (prev > 0 ? prev - 1 : prev));
+  }, []);
 
   // Keyboard navigation
   useEffect(() => {
@@ -3335,19 +3359,7 @@ export default function Presentation() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentSlide]);
-
-  const nextSlide = () => {
-    if (currentSlide < slides.length - 1) {
-      setCurrentSlide(currentSlide + 1);
-    }
-  };
-
-  const prevSlide = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
+  }, [nextSlide, prevSlide]);
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -3366,6 +3378,94 @@ export default function Presentation() {
       else prevSlide();
     }
   };
+
+  if (!isLoggedIn) {
+    return (
+      <div className="h-screen w-full bg-[#f8fafc] flex items-center justify-center p-4 relative overflow-hidden font-sans">
+        {/* Background Effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-[30%] -left-[10%] w-[60%] h-[60%] rounded-full bg-cyan-100/50 blur-[100px] animate-pulse-slow" />
+          <div className="absolute top-[50%] -right-[15%] w-[60%] h-[60%] rounded-full bg-emerald-100/50 blur-[100px] animate-pulse-slow" style={{ animationDelay: "2s" }} />
+          <div className="absolute bottom-[0%] left-[20%] w-[40%] h-[40%] rounded-full bg-teal-50/60 blur-[100px]" />
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="w-full max-w-md bg-white/70 backdrop-blur-2xl p-8 sm:p-10 rounded-[40px] border border-white shadow-2xl relative z-10"
+        >
+          <div className="text-center mb-8">
+            <div className="bg-gradient-to-tr from-teal-500 to-emerald-500 w-20 h-20 rounded-3xl mx-auto flex items-center justify-center mb-6 shadow-xl shadow-teal-500/20">
+              <img src="/mls_logo_01.png" alt="MLS Logo" className="w-12 h-auto" />
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight">Access Secure</h1>
+            <p className="text-slate-500 text-sm mt-2 font-medium">Majalengka Langkung Sae Presentation</p>
+          </div>
+
+          <form onSubmit={handleLogin} className="space-y-5">
+            <div className="space-y-2">
+              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Username</label>
+              <div className="relative">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                  <User size={18} />
+                </div>
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold text-slate-700 focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 transition-all outline-none"
+                  placeholder="Enter username"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-1">Password</label>
+              <div className="relative">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                  <Lock size={18} />
+                </div>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 pl-12 pr-4 text-sm font-bold text-slate-700 focus:bg-white focus:border-teal-500 focus:ring-4 focus:ring-teal-500/10 transition-all outline-none"
+                  placeholder="••••••••"
+                  required
+                />
+              </div>
+            </div>
+
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-red-50 border border-red-100 text-red-600 px-4 py-3 rounded-xl text-xs font-bold flex items-center space-x-2"
+              >
+                <AlertTriangle size={14} />
+                <span>{error}</span>
+              </motion.div>
+            )}
+
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-white font-black py-4 rounded-2xl shadow-lg shadow-teal-500/25 transition-all active:scale-[0.98] mt-2 group flex items-center justify-center space-x-2"
+            >
+              <span>Buka Materi</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+          </form>
+
+          <div className="mt-10 pt-6 border-t border-slate-100 flex items-center justify-center space-x-3 text-slate-400">
+            <Shield size={14} />
+            <span className="text-[10px] font-bold uppercase tracking-widest">Encrypted Session</span>
+          </div>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div

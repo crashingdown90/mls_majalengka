@@ -2136,6 +2136,447 @@ const SlideCTA = () => (
     </motion.div>
   </div>
 );
+
+const SlideMajalengkaSehat = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 overflow-y-auto custom-scrollbar pb-6">
+      <div className="space-y-6">
+        <motion.div whileHover={{ scale: 1.01 }} className="bg-white p-6 rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/40 relative overflow-hidden group">
+          <div className="absolute -right-10 -top-10 opacity-5 group-hover:opacity-10 transition-opacity">
+            <Activity size={180} />
+          </div>
+          <div className="flex items-center space-x-4 mb-5">
+            <div className="bg-rose-50 p-4 rounded-2xl ring-1 ring-rose-100">
+              <Activity className="text-rose-500" size={28} />
+            </div>
+            <div>
+              <h3 className="text-xl font-black text-slate-800">Telemedicine & E-Resep</h3>
+              <p className="text-xs text-rose-600 font-bold uppercase tracking-wider">Konsultasi Jarak Jauh</p>
+            </div>
+          </div>
+          <p className="text-sm text-slate-600 font-medium leading-relaxed mb-4">
+            Layanan konsultasi kesehatan online dengan dokter spesialis RSUD & Puskesmas. Terintegrasi dengan apotek daerah untuk pengiriman obat langsung ke rumah (E-Resep).
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-rose-50/50 p-3 rounded-xl border border-rose-100">
+              <div className="text-lg font-black text-rose-700">150+</div>
+              <div className="text-[10px] text-rose-600/70 font-bold uppercase">Dokter Aktif</div>
+            </div>
+            <div className="bg-rose-50/50 p-3 rounded-xl border border-rose-100">
+              <div className="text-lg font-black text-rose-700">24 Jam</div>
+              <div className="text-[10px] text-rose-600/70 font-bold uppercase">Layanan Siaga</div>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div whileHover={{ scale: 1.01 }} className="bg-white p-6 rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/40 relative overflow-hidden group">
+          <div className="flex items-center space-x-4 mb-5">
+            <div className="bg-blue-50 p-4 rounded-2xl ring-1 ring-blue-100">
+              <Stethoscope className="text-blue-500" size={28} />
+            </div>
+            <div>
+              <h3 className="text-xl font-black text-slate-800">Antrian RS Online</h3>
+              <p className="text-xs text-blue-600 font-bold uppercase tracking-wider">Tanpa Antre di Lokasi</p>
+            </div>
+          </div>
+          <p className="text-sm text-slate-600 font-medium leading-relaxed mb-4">
+            Booking antrian poliklinik RSUD Majalengka & Cideres serta 32 Puskesmas secara real-time. Dilengkapi estimasi waktu kedatangan untuk meminimalkan waktu tunggu.
+          </p>
+          <div className="bg-slate-50 p-3 rounded-2xl border border-slate-100">
+            <div className="flex items-center justify-between text-xs font-bold mb-2 px-1">
+              <span className="text-slate-500 uppercase tracking-wider">Status Antrian Real-time</span>
+              <span className="text-emerald-500 flex items-center"><span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse mr-1.5"></span> LIVE</span>
+            </div>
+            <div className="space-y-2">
+              <div className="bg-white px-3 py-2 rounded-lg flex justify-between items-center border border-slate-200">
+                <span className="text-slate-700">Poli Anak</span>
+                <span className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-[10px]">A-24</span>
+              </div>
+              <div className="bg-white px-3 py-2 rounded-lg flex justify-between items-center border border-slate-200 opacity-60">
+                <span className="text-slate-700">Poli Gigi</span>
+                <span className="bg-slate-100 text-slate-500 px-2 py-0.5 rounded text-[10px]">Penuh</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="space-y-6">
+        <motion.div whileHover={{ scale: 1.01 }} className="bg-gradient-to-br from-teal-500 to-emerald-600 p-6 rounded-[32px] text-white shadow-xl shadow-teal-500/20 relative overflow-hidden group">
+          <div className="absolute -right-10 -bottom-10 opacity-10 group-hover:opacity-20 transition-opacity">
+            <Heart size={180} />
+          </div>
+          <div className="flex items-center space-x-4 mb-5">
+            <div className="bg-white/20 p-4 rounded-2xl backdrop-blur-md">
+              <Heart className="text-white" size={28} />
+            </div>
+            <div>
+              <h3 className="text-xl font-black text-white">Monitoring Stunting (SiCeting)</h3>
+              <p className="text-xs text-teal-100 font-bold uppercase tracking-wider">Perlindungan Ibu & Anak</p>
+            </div>
+          </div>
+          <p className="text-sm text-emerald-50 font-medium leading-relaxed mb-6">
+            Sistem terintegrasi pemantauan gizi anak dan ibu hamil. Data diinput oleh kader Posyandu dan dimonitor langsung oleh Bupati untuk intervensi cepat.
+          </p>
+          <div className="space-y-4">
+            {[
+              { label: "Data Balita Termonitor", val: "94.2%", color: "bg-white/20" },
+              { label: "Intervensi Gizi Aktif", val: "1.2k", color: "bg-white/20" }
+            ].map((stat, i) => (
+              <div key={i} className={`${stat.color} p-3 rounded-2xl border border-white/10 backdrop-blur-sm`}>
+                <div className="text-[10px] text-teal-100 font-bold uppercase mb-1">{stat.label}</div>
+                <div className="text-xl font-black">{stat.val}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div whileHover={{ scale: 1.01 }} className="bg-white p-6 rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/40 relative group">
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100">
+              <ShieldCheck className="text-cyan-600" size={28} />
+            </div>
+            <div>
+              <h3 className="text-xl font-black text-slate-800">Satu Sehat Integrated</h3>
+              <p className="text-xs text-cyan-600 font-bold uppercase tracking-wider">Rekam Medis Nasional</p>
+            </div>
+          </div>
+          <p className="text-sm text-slate-600 font-medium leading-relaxed">
+            Terintegrasi dengan Platform Satu Sehat Kemenkes. Warga dapat melihat riwayat imunisasi, hasil lab, dan histori pengobatan di seluruh fasilitas kesehatan Indonesia.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {["Lab Results", "Vaccine Cert", "Medical History", "Doctor's Note"].map((tag, i) => (
+              <span key={i} className="text-[10px] font-bold px-3 py-1 bg-slate-100 text-slate-500 rounded-full border border-slate-200">{tag}</span>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+);
+
+const SlideMajalengkaPintar = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4 text-slate-800">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-y-auto custom-scrollbar pb-6">
+      {/* Education Section */}
+      <motion.div whileHover={{ y: -5 }} className="lg:col-span-2 bg-gradient-to-br from-blue-600 to-indigo-700 p-8 rounded-[40px] text-white shadow-2xl relative overflow-hidden group">
+        <div className="absolute -right-20 -bottom-20 opacity-10 group-hover:opacity-20 transition-opacity">
+          <GraduationCap size={300} />
+        </div>
+        <div className="flex items-center space-x-5 mb-8">
+          <div className="bg-white/20 p-5 rounded-3xl backdrop-blur-md border border-white/20 shadow-inner">
+            <GraduationCap className="text-white" size={36} />
+          </div>
+          <div>
+            <h3 className="text-3xl font-black">Majalengka Pintar</h3>
+            <p className="text-blue-100 text-sm font-bold uppercase tracking-[0.2em]">Ekosistem Pendidikan Digital</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+          <div className="bg-white/10 p-6 rounded-3xl border border-white/10 backdrop-blur-sm">
+            <h4 className="font-black text-lg mb-2">Portal Beasiswa Terpadu</h4>
+            <p className="text-sm text-blue-100 leading-relaxed">Sistem seleksi beasiswa otomatis berbasis kriteria prestasi & ekonomi untuk mahasiswa & siswa berprestasi Majalengka.</p>
+          </div>
+          <div className="bg-white/10 p-6 rounded-3xl border border-white/10 backdrop-blur-sm">
+            <h4 className="font-black text-lg mb-2">LMS Guru & Siswa</h4>
+            <p className="text-sm text-blue-100 leading-relaxed">Platform belajar mengajar dengan konten kurikulum lokal yang dapat diakses secara gratis oleh seluruh sekolah di Majalengka.</p>
+          </div>
+          <div className="md:col-span-2 bg-indigo-900/40 p-6 rounded-3xl border border-indigo-400/30">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-xs font-black uppercase tracking-widest text-blue-300">Pencapaian Pendidikan Digital 2026</span>
+              <BookOpen size={20} className="text-blue-300" />
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="text-center">
+                <div className="text-2xl font-black">12.5k</div>
+                <div className="text-[9px] font-bold text-blue-200">Penerima Beasiswa</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-black">450+</div>
+                <div className="text-[9px] font-bold text-blue-200">Konten Pembelajaran</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-black">98%</div>
+                <div className="text-[9px] font-bold text-blue-200">Konektivitas Sekolah</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Career/Work Section */}
+      <motion.div whileHover={{ y: -5 }} className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col group">
+        <div className="bg-amber-50 p-5 rounded-3xl w-16 h-16 flex items-center justify-center mb-6 ring-1 ring-amber-100 transition-colors group-hover:bg-amber-100">
+          <Briefcase className="text-amber-600" size={32} />
+        </div>
+        <h3 className="text-2xl font-black text-slate-800 mb-2">Majalengka Bekerja</h3>
+        <p className="text-xs text-amber-600 font-bold uppercase tracking-widest mb-6">AI Career matching</p>
+
+        <div className="space-y-6 flex-1">
+          <div className="space-y-2">
+            <div className="flex items-center space-x-3 text-sm font-bold text-slate-700">
+              <CheckCircle2 size={18} className="text-amber-500" />
+              <span>Matching Kerjaan AI</span>
+            </div>
+            <p className="text-xs text-slate-500 pl-8 leading-relaxed">Sistem mencocokkan profil pencari kerja lokal dengan kebutuhan industri di kawasan Kertajati secara akurat.</p>
+          </div>
+
+          <div className="space-y-2">
+            <div className="flex items-center space-x-3 text-sm font-bold text-slate-700">
+              <CheckCircle2 size={18} className="text-amber-500" />
+              <span>Sertifikasi Kompetensi</span>
+            </div>
+            <p className="text-xs text-slate-500 pl-8 leading-relaxed">Pelatihan digital & non-digital gratis yang bersertifikasi untuk meningkatkan daya saing angkatan kerja Majalengka.</p>
+          </div>
+
+          <div className="mt-8 bg-slate-50 p-5 rounded-3xl border border-slate-100">
+            <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Lowongan Minggu Ini</div>
+            <div className="space-y-3">
+              <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center">
+                <div className="text-[10px] font-bold leading-none">Logistics Mgr <br /><span className="text-slate-400 font-medium">BIJB Area</span></div>
+                <TrendingUp size={14} className="text-emerald-500" />
+              </div>
+              <div className="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex justify-between items-center">
+                <div className="text-[10px] font-bold leading-none">IT Support <br /><span className="text-slate-400 font-medium">Lippo Group</span></div>
+                <TrendingUp size={14} className="text-emerald-500" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+const SlideMajalengkaTerbuka = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 flex-1 overflow-y-auto custom-scrollbar pb-6">
+
+      {/* Card 1: Adminduk */}
+      <motion.div whileHover={{ y: -5 }} className="lg:col-span-2 bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col relative overflow-hidden group">
+        <div className="absolute right-0 top-0 w-32 h-32 bg-cyan-50 rounded-bl-[100px] -mr-10 -mt-10 group-hover:bg-cyan-100 transition-colors"></div>
+        <div className="bg-cyan-50 p-5 rounded-3xl w-16 h-16 flex items-center justify-center mb-8 relative z-10">
+          <Users className="text-cyan-600" size={32} />
+        </div>
+        <h3 className="text-2xl font-black text-slate-800 mb-3">Layanan Adminduk Digital</h3>
+        <p className="text-sm text-slate-500 font-medium leading-relaxed mb-8">
+          Pengurusan KTP-el, Kartu Keluarga, Akta Kelahiran, dan KIA 100% online. Dokumen digital dikirim via email/app, fisik dapat dikirim via kurir ke rumah.
+        </p>
+        <div className="mt-auto grid grid-cols-2 gap-4">
+          <div className="flex items-center space-x-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+            <Zap className="text-amber-500" size={20} />
+            <div className="text-[10px] font-bold leading-tight">Proses Kilat <br /><span className="text-slate-400"> &lt; 24 Jam</span></div>
+          </div>
+          <div className="flex items-center space-x-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+            <Smartphone className="text-cyan-500" size={20} />
+            <div className="text-[10px] font-bold leading-tight">Paperless <br /><span className="text-slate-400">Tanpa Berkas Fisik</span></div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Card 2: OSS Integration */}
+      <motion.div whileHover={{ y: -5 }} className="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-[40px] text-white shadow-2xl flex flex-col relative overflow-hidden group">
+        <div className="absolute -right-10 -bottom-10 opacity-10 group-hover:opacity-20 transition-opacity">
+          <Building2 size={160} />
+        </div>
+        <div className="bg-white/10 p-5 rounded-3xl w-16 h-16 flex items-center justify-center mb-8 backdrop-blur-md">
+          <Building2 className="text-teal-400" size={32} />
+        </div>
+        <h3 className="text-xl font-black mb-3">Integrasi Perizinan (OSS RBA)</h3>
+        <p className="text-xs text-slate-400 font-medium leading-relaxed mb-8 flex-1">
+          Sinergi dengan pusat untuk perizinan usaha berbasis risiko. Pelaku usaha di Majalengka mendapatkan IMB, SIUP, dan NIB lebih cepat & transparan.
+        </p>
+        <div className="space-y-4">
+          <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+            <motion.div initial={{ width: 0 }} whileInView={{ width: "85%" }} className="h-full bg-teal-500 rounded-full" />
+          </div>
+          <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-teal-400">
+            <span>Efisiensi Waktu</span>
+            <span>+85%</span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Card 3: TTE & Tracking */}
+      <motion.div whileHover={{ y: -5 }} className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col group">
+        <div className="bg-emerald-50 p-5 rounded-3xl w-16 h-16 flex items-center justify-center mb-8">
+          <ShieldCheck className="text-emerald-600" size={32} />
+        </div>
+        <h3 className="text-xl font-black text-slate-800 mb-3">TTE & Tracking Berkas</h3>
+        <p className="text-xs text-slate-500 font-medium leading-relaxed mb-6 flex-1">
+          Dokumen resmi ditandatangani secara elektronik (Sertifikat BSrE). Warga bisa memantau status berkas secara real-time dari aplikasi.
+        </p>
+        <div className="space-y-3">
+          {[
+            { step: "Sent", status: "Done", color: "text-emerald-500" },
+            { step: "Review", status: "Done", color: "text-emerald-500" },
+            { step: "TTE", status: "Process", color: "text-amber-500 animate-pulse" }
+          ].map((s, i) => (
+            <div key={i} className="flex justify-between items-center text-[10px] font-black uppercase text-slate-400 bg-slate-50 px-3 py-2 rounded-xl">
+              <span>{s.step}</span>
+              <span className={s.color}>{s.status}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+const SlideMajalengkaBerdikari = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4 text-slate-800">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 overflow-y-auto custom-scrollbar pb-6">
+
+      {/* UMKM Marketplace */}
+      <motion.div whileHover={{ scale: 1.01 }} className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col group">
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center space-x-4">
+            <div className="bg-amber-50 p-4 rounded-2xl ring-1 ring-amber-100 group-hover:bg-amber-100 transition-colors pointer-events-none">
+              <ShoppingBag className="text-amber-600" size={28} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-black">E-Katalog UMKM</h3>
+              <p className="text-xs text-amber-600 font-bold uppercase tracking-widest">Digital Marketplace</p>
+            </div>
+          </div>
+          <Award className="text-amber-200 group-hover:text-amber-400 transition-colors" size={40} />
+        </div>
+        <p className="text-sm text-slate-500 font-medium leading-relaxed mb-8 flex-1">
+          Etalase digital produk unggulan asli Majalengka. Pengrajin bambu, anyaman, hingga kuliner lokal terhubung ke pasar nasional dan internasional.
+        </p>
+        <div className="grid grid-cols-3 gap-3">
+          {[
+            { img: "src='/Logo_Majalengka.png'", title: "Anyaman", price: "45k" },
+            { img: "src='/Logo_Majalengka.png'", title: "Batik Mjk", price: "250k" },
+            { img: "src='/Logo_Majalengka.png'", title: "Emping", price: "25k" }
+          ].map((item, i) => (
+            <div key={i} className="bg-slate-50 p-2 rounded-2xl border border-slate-100 text-center">
+              <div className="w-full aspect-square bg-white rounded-xl mb-2 flex items-center justify-center p-2">
+                <img {...{ src: "/mls_logo_01.png" }} className="w-8 opacity-40 grayscale" alt="item" />
+              </div>
+              <div className="text-[9px] font-black">{item.title}</div>
+              <div className="text-[9px] font-bold text-amber-600">Rp {item.price}</div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      <div className="space-y-6">
+        {/* Majalengka Pay */}
+        <motion.div whileHover={{ x: -10 }} className="bg-gradient-to-r from-emerald-600 to-teal-700 p-8 rounded-[40px] text-white shadow-2xl relative overflow-hidden group">
+          <div className="absolute -right-10 -bottom-10 opacity-10 group-hover:opacity-20 transition-opacity">
+            <CreditCard size={200} />
+          </div>
+          <div className="flex items-center space-x-5 mb-6">
+            <div className="bg-white/20 p-4 rounded-2xl backdrop-blur-md">
+              <CreditCard className="text-white" size={28} />
+            </div>
+            <div>
+              <h3 className="text-xl font-black">Majalengka Pay</h3>
+              <p className="text-[10px] text-emerald-200 font-bold uppercase tracking-widest">Layanan E-Payment Lokal</p>
+            </div>
+          </div>
+          <p className="text-sm text-emerald-50 font-medium leading-relaxed mb-6">
+            Satu sistem pembayaran terintegrasi untuk Pajak (PBB), Retribusi Pasar, Parkir, hingga pembayaran PDAM via QRIS.
+          </p>
+          <div className="flex items-center space-x-3 bg-white/10 p-3 rounded-2xl border border-white/10 backdrop-blur-sm">
+            <ShieldCheck size={20} className="text-emerald-300" />
+            <span className="text-[10px] font-black uppercase tracking-widest leading-none">Keamanan Transaksi Lapis 3 (Anti-Fraud)</span>
+          </div>
+        </motion.div>
+
+        {/* Market Price Monitoring */}
+        <motion.div whileHover={{ x: -10 }} className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 group">
+          <div className="flex items-center space-x-5">
+            <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100 group-hover:bg-cyan-100 transition-colors">
+              <TrendingUp className="text-cyan-600" size={28} />
+            </div>
+            <div>
+              <h3 className="text-xl font-black text-slate-800">Monitoring Harga Pasar</h3>
+              <p className="text-[10px] text-cyan-600 font-bold uppercase tracking-widest">Update Real-time 4 Pasar Induk</p>
+            </div>
+          </div>
+          <div className="mt-6 space-y-3">
+            {[
+              { name: "Beras Premium", price: "15.200", trend: "up", color: "text-red-500" },
+              { name: "Cabai Rawit", price: "32.000", trend: "down", color: "text-emerald-500" }
+            ].map((p, i) => (
+              <div key={i} className="flex justify-between items-center text-xs font-bold border-b border-slate-50 pb-2">
+                <span className="text-slate-500">{p.name}</span>
+                <span className="text-slate-700">Rp {p.price} <span className={`ml-2 ${p.color}`}>{p.trend === "up" ? "▲" : "▼"}</span></span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+);
+
+const SlideMajalengkaMendengar = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4 text-slate-800">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 flex-1 overflow-y-auto custom-scrollbar pb-6">
+
+      {/* Omnichannel Section */}
+      <motion.div whileHover={{ y: -5 }} className="lg:col-span-3 bg-white p-8 rounded-[40px] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col group relative overflow-hidden">
+        <div className="absolute -right-20 -top-20 w-64 h-64 bg-slate-50 rounded-full group-hover:scale-110 transition-transform duration-700"></div>
+        <div className="bg-indigo-50 p-5 rounded-3xl w-16 h-16 flex items-center justify-center mb-8 relative z-10">
+          <MessageSquare className="text-indigo-600" size={32} />
+        </div>
+        <h3 className="text-3xl font-black text-slate-800 mb-4 relative z-10">Majalengka Mendengar</h3>
+        <p className="text-base text-slate-500 font-medium leading-relaxed mb-8 relative z-10">
+          Platform penampungan aspirasi dan pengaduan rakyat berbasis <strong className="text-indigo-600">Omnichannel</strong>. Masuk dari WA, Instagram, App, hingga Web Portal diproses dalam satu sistem.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+          <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100">
+            <h4 className="font-extrabold text-indigo-800 mb-2 flex items-center">
+              <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full mr-2"></span>
+              AI Sentiment Analysis
+            </h4>
+            <p className="text-xs text-slate-500 font-medium leading-relaxed">Sistem otomatis mendeteksi tingkat urgensi dan emosi aduan untuk menentukan prioritas penanganan oleh OPD terkait.</p>
+          </div>
+          <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100">
+            <h4 className="font-extrabold text-emerald-800 mb-2 flex items-center">
+              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>
+              SLA Enforcement
+            </h4>
+            <p className="text-xs text-slate-500 font-medium leading-relaxed">Setiap laporan wajib dijawab dalam &lt; 4 jam dan diselesaikan dalam &lt; 48 jam sesuai KPI kinerja kepala dinas.</p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Stats & Live Status */}
+      <div className="lg:col-span-2 space-y-6">
+        <motion.div whileHover={{ rotate: 1 }} className="bg-gradient-to-br from-indigo-600 to-purple-700 p-8 rounded-[40px] text-white shadow-2xl flex flex-col justify-center h-full group">
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="font-black text-xl">Transparansi Penanganan</h3>
+            <div className="flex space-x-1">
+              {[1, 2, 3].map(i => <div key={i} className="w-1.5 h-5 bg-white/30 rounded-full group-hover:h-8 transition-all duration-300"></div>)}
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            {[
+              { label: "Laporan Tertangani", val: "8.4k", color: "bg-emerald-400" },
+              { label: "Kepuasan Warga", val: "4.8/5", color: "bg-amber-400" },
+              { label: "SLA Compliance", val: "94.8%", color: "bg-cyan-400" }
+            ].map((stat, i) => (
+              <div key={i} className="flex items-center space-x-5">
+                <div className={`w-1 shadow-[0_0_15px] ${stat.color} h-12 rounded-full`}></div>
+                <div>
+                  <div className="text-[10px] text-indigo-200 font-bold uppercase tracking-widest mb-1">{stat.label}</div>
+                  <div className="text-2xl font-black">{stat.val}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </div>
+);
 // Data Slides
 const slides = [
   {
@@ -2704,108 +3145,39 @@ const slides = [
     icon: <Activity className="text-emerald-500" />,
   },
   {
-    id: "klaster-1-2",
-    title: "Modul Layanan (1 & 2)",
-    subtitle: "Sosial, SDM, & Infrastruktur",
-    content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-start pt-6 relative z-10">
-        <motion.div whileHover={{ scale: 1.01 }} className="space-y-6 bg-white border border-slate-100 shadow-xl shadow-slate-200/40 p-8 rounded-3xl transition-transform">
-          <div className="flex items-center space-x-4 border-b border-slate-100 pb-5">
-            <div className="bg-emerald-50 p-4 rounded-2xl ring-1 ring-emerald-100"><Users className="text-emerald-500" size={28} /></div>
-            <div>
-              <h3 className="text-2xl font-extrabold text-slate-800">Klaster I: Sejahtera</h3>
-              <p className="text-sm text-emerald-600 font-bold tracking-wide uppercase mt-1">Sosial & SDM</p>
-            </div>
-          </div>
-          <ul className="space-y-4">
-            {[
-              { title: "Majalengka Pintar:", desc: "Sistem seleksi beasiswa AI & LMS." },
-              { title: "Sehat Bareng:", desc: "Telemedicine & Stunting Tracking real-time." },
-              { title: "Ramah Keluarga:", desc: "Digital Crisis Portal perlindungan perempuan & anak." },
-              { title: "Digitalisasi Religi:", desc: "Administrasi Guru Ngaji dan Marbot." }
-            ].map((item, i) => (
-              <li key={i} className="flex items-start group">
-                <CheckCircle2 className="text-emerald-500 mr-4 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div className="text-slate-600"><span className="font-bold text-slate-800">{item.title}</span> {item.desc}</div>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <motion.div whileHover={{ scale: 1.01 }} className="space-y-6 bg-white border border-slate-100 shadow-xl shadow-slate-200/40 p-8 rounded-3xl transition-transform">
-          <div className="flex items-center space-x-4 border-b border-slate-100 pb-5">
-            <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100"><MapPin className="text-cyan-600" size={28} /></div>
-            <div>
-              <h3 className="text-2xl font-extrabold text-slate-800">Klaster II: Mulus & Terang</h3>
-              <p className="text-sm text-cyan-600 font-bold tracking-wide uppercase mt-1">Infrastruktur</p>
-            </div>
-          </div>
-          <ul className="space-y-4">
-            {[
-              { title: "URC Mobile Field App:", desc: "Lapor jalan rusak/drainase mampet via foto GPS." },
-              { title: "Majalengka Caang:", desc: "Dashboard IoT kendali lampu jalan." },
-              { title: "MaaS Kertajati Hub:", desc: "Integrasi angkutan dengan bandara BIJB." }
-            ].map((item, i) => (
-              <li key={i} className="flex items-start group">
-                <CheckCircle2 className="text-cyan-500 mr-4 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div className="text-slate-600"><span className="font-bold text-slate-800">{item.title}</span> {item.desc}</div>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
-    ),
-    icon: <Layout className="text-cyan-500" />,
+    id: "majalengka-sehat",
+    title: "Majalengka Sehat",
+    subtitle: "Layanan Kesehatan Digital Terintegrasi & Monitoring Stunting",
+    content: <SlideMajalengkaSehat />,
+    icon: <Activity className="text-rose-500" />,
   },
   {
-    id: "klaster-3-4-5",
-    title: "Modul Layanan (3, 4 & 5)",
-    subtitle: "Ekonomi, Birokrasi & Fiskal",
-    content: (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full items-start pt-4 relative z-10 w-full text-sm">
-
-        {[
-          {
-            title: "Berdikari", icon: <Briefcase className="text-cyan-500" />, bgIcon: "bg-cyan-50", ring: "ring-cyan-100", color: "bg-cyan-500", items: [
-              { strong: "Kertajati Bekerja:", text: "AI Labor Market match." },
-              { strong: "UMKM Go Digital:", text: "E-commerce & ERP lokal." },
-              { strong: "Wisata Juara:", text: "AR Tourism Map interaktif." }
-            ]
-          },
-          {
-            title: "Terbuka", icon: <Layout className="text-teal-500" />, bgIcon: "bg-teal-50", ring: "ring-teal-100", color: "bg-teal-500", items: [
-              { strong: "Omnichannel:", text: "Integrasi keluhan WA, IG, Web." },
-              { strong: "Gen-AI Chatbot:", text: "Asisten virtual 24 jam." },
-              { strong: "Blockchain E-Office:", text: "Persuratan aman & presensi." }
-            ]
-          },
-          {
-            title: "Bersih", icon: <Shield className="text-emerald-500" />, bgIcon: "bg-emerald-50", ring: "ring-emerald-100", color: "bg-emerald-500", items: [
-              { strong: "Pajak Tepat:", text: "AI Drone/Satelit untuk PBB." },
-              { strong: "Cloud Tapping Box:", text: "Cegah kebocoran pajak hotel." },
-              { strong: "E-Audit AI:", text: "Deteksi anomali anggaran." }
-            ]
-          }
-        ].map((klaster, idx) => (
-          <motion.div key={idx} whileHover={{ y: -5 }} className="bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-100 flex flex-col h-full transition-transform">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className={`${klaster.bgIcon} p-3 rounded-2xl ring-1 ${klaster.ring}`}>{klaster.icon}</div>
-              <h3 className="text-xl font-extrabold text-slate-800">Klaster {idx + 3}: {klaster.title}</h3>
-            </div>
-            <ul className="space-y-5 text-slate-600">
-              {klaster.items.map((item, i) => (
-                <li key={i} className="flex items-start bg-slate-50/50 p-2 rounded-xl">
-                  <span className={`w-2 h-2 mt-1.5 ${klaster.color} rounded-full mr-3 shrink-0 shadow-sm`}></span>
-                  <span className="leading-relaxed"><strong className="text-slate-800">{item.strong}</strong> <br className="hidden lg:block" /> {item.text}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-
-      </div>
-    ),
-    icon: <Briefcase className="text-teal-500" />,
+    id: "majalengka-pintar",
+    title: "Majalengka Pintar & Bekerja",
+    subtitle: "Ekosistem Pendidikan & Karir Berbasis AI",
+    content: <SlideMajalengkaPintar />,
+    icon: <GraduationCap className="text-blue-500" />,
+  },
+  {
+    id: "majalengka-terbuka",
+    title: "Majalengka Terbuka",
+    subtitle: "Digitalisasi Adminduk & Integrasi Perizinan OSS",
+    content: <SlideMajalengkaTerbuka />,
+    icon: <Users className="text-cyan-500" />,
+  },
+  {
+    id: "majalengka-berdikari",
+    title: "Majalengka Berdikari & Sejahtera",
+    subtitle: "Pemberdayaan UMKM, E-Payment, dan Monitoring Ekonomi",
+    content: <SlideMajalengkaBerdikari />,
+    icon: <Briefcase className="text-amber-500" />,
+  },
+  {
+    id: "majalengka-mendengar",
+    title: "Majalengka Mendengar",
+    subtitle: "Omnichannel Aspirasi & AI Sentiment Analysis",
+    content: <SlideMajalengkaMendengar />,
+    icon: <MessageSquare className="text-indigo-500" />,
   },
   {
     id: "fitur-inovasi",
@@ -2950,57 +3322,6 @@ const slides = [
       </div>
     ),
     icon: <Sprout className="text-emerald-500" />,
-  },
-  {
-    id: "layanan-informasi",
-    title: "Pusat Layanan & Informasi Terpadu",
-    subtitle: "Akses Mudah untuk Kebutuhan Sehari-hari",
-    content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 h-full relative z-10 w-full">
-        {/* Kolom Kiri: Layanan Publik & e-Payment */}
-        <div className="space-y-6">
-          <motion.div whileHover={{ x: 5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-cyan-50 p-4 rounded-2xl ring-1 ring-cyan-100 group-hover:bg-cyan-100 transition-colors"><FileText className="text-cyan-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Administrasi Publik</h3>
-            </div>
-            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Pengurusan dokumen kependudukan, perizinan usaha, dan surat keterangan secara digital tanpa antre.</p>
-          </motion.div>
-
-          <motion.div whileHover={{ x: 5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-teal-50 p-4 rounded-2xl ring-1 ring-teal-100 group-hover:bg-teal-100 transition-colors"><CreditCard className="text-teal-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Majalengka Pay (E-Payment)</h3>
-            </div>
-            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Sistem pembayaran retribusi daerah, tagihan PDAM, PBB, hingga transaksi pasar tradisional via QRIS lokal.</p>
-          </motion.div>
-        </div>
-
-        {/* Kolom Kanan: Pusat Informasi & Interaksi */}
-        <div className="space-y-6">
-          <motion.div whileHover={{ x: -5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-emerald-50 p-4 rounded-2xl ring-1 ring-emerald-100 group-hover:bg-emerald-100 transition-colors"><Info className="text-emerald-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Portal Informasi Real-time</h3>
-            </div>
-            <ul className="space-y-2 font-medium text-slate-600 ml-[4.5rem] list-disc pl-4 leading-relaxed">
-              <li>Pembaruan harga komoditas pangan pasar.</li>
-              <li>Informasi cuaca khusus pertanian.</li>
-              <li>Jadwal event budaya & loker Purna-TKI.</li>
-            </ul>
-          </motion.div>
-
-          <motion.div whileHover={{ x: -5 }} className="bg-white p-6 rounded-3xl shadow-lg shadow-slate-200/50 border border-slate-100 group transition-all">
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="bg-green-50 p-4 rounded-2xl ring-1 ring-green-100 group-hover:bg-green-100 transition-colors"><MessageSquare className="text-green-600" size={24} /></div>
-              <h3 className="text-xl font-extrabold text-slate-800">Ruang Partisipasi Warga</h3>
-            </div>
-            <p className="text-slate-600 font-medium ml-[4.5rem] leading-relaxed">Fitur e-Polling pelibatan warga dalam perencanaan desa & diskusi terbuka bersama dinas terkait.</p>
-          </motion.div>
-        </div>
-      </div>
-    ),
-    icon: <Info className="text-teal-500" />,
   },
   {
     id: "user-journey",

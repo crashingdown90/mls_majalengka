@@ -2116,36 +2116,20 @@ const SlideCTA = () => (
         Mari bersama wujudkan Majalengka sebagai Kabupaten Digital Terdepan di Jawa Barat. Satu platform, satu visi, satu langkah menuju masa depan.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
-        {[
-          { label: "Langkah 1", title: "Pembahasan Teknis", desc: "Koordinasi lintas OPD & Diskominfo", icon: <MessageSquare size={20} /> },
-          { label: "Langkah 2", title: "Penyusunan DED", desc: "Detail Engineering Design & RAB", icon: <FileText size={20} /> },
-          { label: "Langkah 3", title: "Kick-off 2025", desc: "Groundbreaking Command Center", icon: <Zap size={20} /> },
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ y: -5 }}
-            className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm group"
-          >
-            <div className="bg-teal-50 w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3 text-teal-600 group-hover:bg-teal-100 transition-colors">
-              {item.icon}
-            </div>
-            <div className="text-[10px] text-teal-600 font-black uppercase tracking-widest mb-1">{item.label}</div>
-            <h4 className="text-sm font-bold text-slate-800">{item.title}</h4>
-            <p className="text-[10px] text-slate-400 font-medium mt-1">{item.desc}</p>
-          </motion.div>
-        ))}
+      <div className="max-w-2xl mx-auto mb-8">
+        <div className="bg-white/80 backdrop-blur-md p-6 sm:p-8 rounded-[32px] border border-slate-100 shadow-xl shadow-slate-200/30 relative overflow-hidden">
+          <div className="absolute top-3 left-6 text-6xl text-teal-200 font-serif leading-none select-none">&ldquo;</div>
+          <p className="text-base sm:text-lg md:text-xl text-slate-700 font-semibold italic leading-relaxed relative z-10 pt-6 px-2">
+            Teknologi bukan sekadar alat, melainkan jembatan yang menghubungkan harapan rakyat dengan kebijakan yang nyata. Majalengka Langkung Sae adalah bukti bahwa inovasi lahir dari keberanian untuk berubah.
+          </p>
+          <div className="absolute bottom-3 right-6 text-6xl text-teal-200 font-serif leading-none select-none">&rdquo;</div>
+        </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6 text-sm">
-        <div className="bg-slate-100 px-5 py-3 rounded-2xl border border-slate-200">
-          <span className="text-slate-400 text-xs font-bold uppercase block">Kontak</span>
-          <span className="text-slate-700 font-bold">Diskominfo Kab. Majalengka</span>
-        </div>
-        <div className="bg-slate-100 px-5 py-3 rounded-2xl border border-slate-200">
-          <span className="text-slate-400 text-xs font-bold uppercase block">Email</span>
-          <span className="text-slate-700 font-bold">diskominfo@majalengkakab.go.id</span>
-        </div>
+      <div className="flex items-center justify-center space-x-3 text-sm text-slate-400 font-medium">
+        <div className="h-px w-12 bg-slate-300"></div>
+        <span className="text-xs uppercase tracking-[0.2em] font-bold text-slate-400">Pemerintah Kabupaten Majalengka &bull; 2025</span>
+        <div className="h-px w-12 bg-slate-300"></div>
       </div>
     </motion.div>
   </div>

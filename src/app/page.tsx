@@ -1897,6 +1897,259 @@ const SlideEarlyWarning = () => (
     </div>
   </div>
 );
+
+const SlideBeforeAfter = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 flex-1 overflow-y-auto custom-scrollbar pb-6">
+      {/* BEFORE */}
+      <motion.div whileHover={{ scale: 1.01 }} className="bg-gradient-to-br from-slate-100 to-slate-200 p-5 sm:p-7 rounded-[32px] border border-slate-300 relative overflow-hidden group">
+        <div className="absolute top-4 right-4 bg-red-100 text-red-700 px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest">Sebelum MLS</div>
+        <div className="mt-10 space-y-4">
+          {[
+            { icon: <FileText size={20} className="text-red-400" />, title: "Silo Data Antar OPD", desc: "Data tersebar di 40+ OPD tanpa integrasi. Duplikasi data mencapai 60%." },
+            { icon: <Users size={20} className="text-red-400" />, title: "Antrian Manual", desc: "Warga harus datang fisik ke kantor dinas, antri berjam-jam untuk layanan dasar." },
+            { icon: <FileText size={20} className="text-red-400" />, title: "Kertas & Surat Manual", desc: "Ribuan rim kertas per tahun. Disposisi surat bisa memakan waktu 3-7 hari." },
+            { icon: <AlertTriangle size={20} className="text-red-400" />, title: "Respon Kedaruratan Lambat", desc: "Tidak ada sistem EWS. Koordinasi bencana via telepon & grup WA." },
+            { icon: <PieChart size={20} className="text-red-400" />, title: "Keputusan Berbasis Asumsi", desc: "Bupati tidak memiliki dashboard real-time. Laporan bulanan sering terlambat." },
+          ].map((item, i) => (
+            <div key={i} className="flex items-start space-x-3 bg-white/60 p-3 rounded-xl border border-slate-200">
+              <div className="bg-red-50 p-2 rounded-lg shrink-0">{item.icon}</div>
+              <div>
+                <h4 className="text-xs font-black text-slate-700">{item.title}</h4>
+                <p className="text-[10px] text-slate-500 font-medium mt-0.5">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* AFTER */}
+      <motion.div whileHover={{ scale: 1.01 }} className="bg-gradient-to-br from-teal-600 to-emerald-700 p-5 sm:p-7 rounded-[32px] border border-teal-500 text-white relative overflow-hidden group shadow-2xl">
+        <div className="absolute -right-10 -bottom-10 opacity-10"><Globe size={200} /></div>
+        <div className="absolute top-4 right-4 bg-emerald-400/20 text-emerald-100 px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest backdrop-blur-sm border border-emerald-400/30">Sesudah MLS</div>
+        <div className="mt-10 space-y-4 relative z-10">
+          {[
+            { icon: <Network size={20} className="text-emerald-300" />, title: "Satu Data Terintegrasi", desc: "Seluruh OPD terkoneksi via ESB & Data Lake. Satu sumber kebenaran data." },
+            { icon: <Smartphone size={20} className="text-emerald-300" />, title: "Layanan 24/7 dari Genggaman", desc: "Semua layanan publik bisa diakses kapan saja, di mana saja via Super App." },
+            { icon: <Zap size={20} className="text-emerald-300" />, title: "100% Paperless & TTE BSrE", desc: "Disposisi 5 menit. Penghematan >90% anggaran ATK. Sah secara hukum." },
+            { icon: <Shield size={20} className="text-emerald-300" />, title: "Respon Darurat <15 Menit", desc: "EWS otomatis + CCTV AI + Broadcast warga. Eskalasi terstruktur ke Bupati." },
+            { icon: <LayoutDashboard size={20} className="text-emerald-300" />, title: "Keputusan Berbasis Data", desc: "Command Center real-time. AI-powered insights untuk pengambilan keputusan cepat." },
+          ].map((item, i) => (
+            <div key={i} className="flex items-start space-x-3 bg-white/10 p-3 rounded-xl border border-white/10 backdrop-blur-sm">
+              <div className="bg-white/10 p-2 rounded-lg shrink-0">{item.icon}</div>
+              <div>
+                <h4 className="text-xs font-black text-white">{item.title}</h4>
+                <p className="text-[10px] text-emerald-100 font-medium mt-0.5">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+const SlideBenchmark = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4">
+    <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed mb-4 max-w-4xl">
+      Belajar dari keberhasilan daerah lain yang telah menerapkan ekosistem digital terpadu, MLS dirancang untuk <strong className="text-teal-600">melampaui benchmark nasional</strong>.
+    </p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-y-auto pb-6 custom-scrollbar">
+      {[
+        {
+          kab: "Kab. Banyuwangi",
+          prov: "Jawa Timur",
+          prestasi: "Smart City Award 2023",
+          fitur: ["Smart Village 100%", "E-Health terintegrasi", "Tourism Digital Map"],
+          pelajaran: "Digitalisasi desa sebagai fondasi Smart City.",
+          color: "from-blue-500 to-indigo-600",
+          borderColor: "border-blue-200"
+        },
+        {
+          kab: "Kab. Sumedang",
+          prov: "Jawa Barat",
+          prestasi: "Top Digital Gov 2024",
+          fitur: ["SIPD terintegrasi penuh", "Command Center aktif", "Paperless Office"],
+          pelajaran: "Integrasi SIPD & Command Center sebagai game-changer.",
+          color: "from-teal-500 to-emerald-600",
+          borderColor: "border-teal-200"
+        },
+        {
+          kab: "Kab. Bojonegoro",
+          prov: "Jawa Timur",
+          prestasi: "Open Government Award",
+          fitur: ["Dialog publik digital", "Open Data Portal", "AI Chatbot warga"],
+          pelajaran: "Partisipasi publik digital meningkatkan kepercayaan warga.",
+          color: "from-amber-500 to-orange-600",
+          borderColor: "border-amber-200"
+        },
+      ].map((item, idx) => (
+        <motion.div key={idx} whileHover={{ y: -8 }} className={`bg-white p-5 sm:p-6 rounded-[32px] border ${item.borderColor} shadow-xl flex flex-col group transition-all`}>
+          <div className={`bg-gradient-to-r ${item.color} text-white p-4 rounded-2xl mb-4`}>
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="font-black text-base">{item.kab}</h3>
+                <p className="text-white/70 text-[10px] font-bold uppercase">{item.prov}</p>
+              </div>
+              <Award className="text-white/50" size={28} />
+            </div>
+            <div className="mt-2 bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold inline-block">{item.prestasi}</div>
+          </div>
+          <div className="space-y-2 flex-1">
+            <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-wider">Fitur Unggulan</h4>
+            {item.fitur.map((f, i) => (
+              <div key={i} className="flex items-center space-x-2 text-xs text-slate-600 font-medium">
+                <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+                <span>{f}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 pt-3 border-t border-slate-100">
+            <div className="flex items-start space-x-2">
+              <Sparkles size={14} className="text-amber-500 shrink-0 mt-0.5" />
+              <p className="text-[10px] text-slate-500 font-bold italic">{item.pelajaran}</p>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+
+      {/* MLS Card */}
+      <motion.div whileHover={{ y: -8 }} className="sm:col-span-2 lg:col-span-3 bg-gradient-to-r from-teal-600 to-emerald-700 p-5 sm:p-6 rounded-[32px] text-white shadow-2xl relative overflow-hidden">
+        <div className="absolute -right-10 -bottom-10 opacity-10"><Award size={180} /></div>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 relative z-10">
+          <div>
+            <div className="bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold inline-block mb-2 backdrop-blur-sm">Target Majalengka 2029</div>
+            <h3 className="text-xl sm:text-2xl font-black">MLS: Menggabungkan Semua Best Practice</h3>
+            <p className="text-emerald-100 text-xs font-medium mt-2 max-w-2xl">
+              Majalengka Langkung Sae dirancang mengadopsi seluruh keunggulan dari daerah-daerah pelopor, ditambah fitur inovasi AI, IoT, dan Blockchain yang belum diterapkan di daerah manapun.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 gap-3 shrink-0">
+            <div className="bg-white/10 p-3 rounded-xl text-center border border-white/10">
+              <div className="text-lg font-black">40+</div>
+              <div className="text-[9px] text-emerald-200 font-bold uppercase">OPD</div>
+            </div>
+            <div className="bg-white/10 p-3 rounded-xl text-center border border-white/10">
+              <div className="text-lg font-black">1.3M</div>
+              <div className="text-[9px] text-emerald-200 font-bold uppercase">Warga</div>
+            </div>
+            <div className="bg-white/10 p-3 rounded-xl text-center border border-white/10">
+              <div className="text-lg font-black">24/7</div>
+              <div className="text-[9px] text-emerald-200 font-bold uppercase">Aktif</div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </div>
+);
+
+const SlideUserJourney = () => (
+  <div className="flex flex-col h-full relative z-10 w-full mt-2 pb-4">
+    <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed mb-4 max-w-4xl">
+      Bagaimana seorang warga Majalengka menggunakan Super App MLS dalam kehidupan sehari-hari &mdash; dari pelaporan hingga penyelesaian, semua dalam <strong className="text-teal-600">satu genggaman</strong>.
+    </p>
+    <div className="flex-1 overflow-y-auto custom-scrollbar pb-6">
+      <div className="relative">
+        {/* Connection Line */}
+        <div className="absolute left-6 sm:left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-cyan-400 via-teal-400 to-emerald-400 opacity-40 hidden sm:block"></div>
+
+        <div className="space-y-4 sm:space-y-5">
+          {[
+            { step: 1, title: "Buka Super App MLS", desc: "Warga membuka aplikasi & login menggunakan NIK atau akun SSO daerah.", icon: <Smartphone className="text-cyan-600" size={20} />, bg: "bg-cyan-50", time: "0 detik", color: "bg-cyan-500" },
+            { step: 2, title: "Pilih Layanan", desc: "Dashboard personal menampilkan layanan sesuai profil: kesehatan, pendidikan, perizinan, atau laporan.", icon: <Layout className="text-blue-600" size={20} />, bg: "bg-blue-50", time: "10 detik", color: "bg-blue-500" },
+            { step: 3, title: "Buat Laporan / Ajukan Layanan", desc: "Contoh: Lapor jalan rusak di Kec. Cigasong. Foto + lokasi GPS otomatis terlampir.", icon: <MapPin className="text-teal-600" size={20} />, bg: "bg-teal-50", time: "30 detik", color: "bg-teal-500" },
+            { step: 4, title: "Sistem Memproses Otomatis", desc: "AI mengklasifikasi laporan & mendistribusikan ke PUPR/Dinas terkait. Notifikasi OPD terkirim.", icon: <Bot className="text-indigo-600" size={20} />, bg: "bg-indigo-50", time: "< 5 menit", color: "bg-indigo-500" },
+            { step: 5, title: "OPD Merespon & Mengerjakan", desc: "Tim lapangan menerima work order via Field App. Progress terupdate real-time di dashboard.", icon: <CheckCircle2 className="text-emerald-600" size={20} />, bg: "bg-emerald-50", time: "< 24 jam", color: "bg-emerald-500" },
+            { step: 6, title: "Warga Menerima Notifikasi Selesai", desc: "Push notification bahwa laporan telah ditangani + foto bukti penyelesaian. Warga bisa memberi rating.", icon: <Award className="text-amber-600" size={20} />, bg: "bg-amber-50", time: "Selesai!", color: "bg-amber-500" },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-start space-x-3 sm:space-x-5 group"
+            >
+              <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl ${item.color} text-white flex items-center justify-center text-lg sm:text-2xl font-black shrink-0 shadow-lg z-10 group-hover:scale-110 transition-transform`}>
+                {item.step}
+              </div>
+              <div className="flex-1 bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-sm group-hover:shadow-lg group-hover:border-teal-200 transition-all">
+                <div className="flex items-start justify-between mb-1">
+                  <div className="flex items-center space-x-2">
+                    <div className={`${item.bg} p-1.5 rounded-lg`}>{item.icon}</div>
+                    <h4 className="text-sm font-black text-slate-800">{item.title}</h4>
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded-full shrink-0 ml-2">{item.time}</span>
+                </div>
+                <p className="text-xs text-slate-500 font-medium mt-1 leading-relaxed">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const SlideCTA = () => (
+  <div className="flex flex-col items-center justify-center h-full relative z-10 w-full text-center">
+    <motion.div
+      initial={{ scale: 0.9, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="max-w-3xl mx-auto"
+    >
+      <motion.div
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        className="mb-8"
+      >
+        <div className="bg-gradient-to-r from-teal-500 to-emerald-500 w-24 h-24 sm:w-28 sm:h-28 rounded-[32px] mx-auto flex items-center justify-center shadow-2xl shadow-teal-500/30">
+          <img src="/mls_logo_01.png" alt="MLS Logo" className="w-16 sm:w-20 h-auto drop-shadow-lg" />
+        </div>
+      </motion.div>
+
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-800 mb-4 leading-tight">
+        Majalengka <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-emerald-500">Langkung Sae</span>
+      </h2>
+      <p className="text-base sm:text-lg text-slate-500 font-medium max-w-2xl mx-auto mb-8 leading-relaxed">
+        Mari bersama wujudkan Majalengka sebagai Kabupaten Digital Terdepan di Jawa Barat. Satu platform, satu visi, satu langkah menuju masa depan.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
+        {[
+          { label: "Langkah 1", title: "Pembahasan Teknis", desc: "Koordinasi lintas OPD & Diskominfo", icon: <MessageSquare size={20} /> },
+          { label: "Langkah 2", title: "Penyusunan DED", desc: "Detail Engineering Design & RAB", icon: <FileText size={20} /> },
+          { label: "Langkah 3", title: "Kick-off 2025", desc: "Groundbreaking Command Center", icon: <Zap size={20} /> },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -5 }}
+            className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm group"
+          >
+            <div className="bg-teal-50 w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3 text-teal-600 group-hover:bg-teal-100 transition-colors">
+              {item.icon}
+            </div>
+            <div className="text-[10px] text-teal-600 font-black uppercase tracking-widest mb-1">{item.label}</div>
+            <h4 className="text-sm font-bold text-slate-800">{item.title}</h4>
+            <p className="text-[10px] text-slate-400 font-medium mt-1">{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-6 text-sm">
+        <div className="bg-slate-100 px-5 py-3 rounded-2xl border border-slate-200">
+          <span className="text-slate-400 text-xs font-bold uppercase block">Kontak</span>
+          <span className="text-slate-700 font-bold">Diskominfo Kab. Majalengka</span>
+        </div>
+        <div className="bg-slate-100 px-5 py-3 rounded-2xl border border-slate-200">
+          <span className="text-slate-400 text-xs font-bold uppercase block">Email</span>
+          <span className="text-slate-700 font-bold">diskominfo@majalengkakab.go.id</span>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+);
 // Data Slides
 const slides = [
   {
@@ -2042,6 +2295,13 @@ const slides = [
     subtitle: "Indikator Utama Pembangunan & Capaian Sektoral (Real-Time)",
     content: <SlideExecutiveMacroDashboard />,
     icon: <PieChart className="text-cyan-500" />,
+  },
+  {
+    id: "before-after",
+    title: "Transformasi: Sebelum vs Sesudah MLS",
+    subtitle: "Perbandingan Kondisi Pelayanan Publik Kabupaten Majalengka",
+    content: <SlideBeforeAfter />,
+    icon: <RefreshCw className="text-teal-500" />,
   },
   {
     id: "command-center",
@@ -2757,6 +3017,13 @@ const slides = [
     icon: <Info className="text-teal-500" />,
   },
   {
+    id: "user-journey",
+    title: "Perjalanan Warga Menggunakan MLS",
+    subtitle: "Dari Pelaporan Hingga Penyelesaian dalam Satu Genggaman",
+    content: <SlideUserJourney />,
+    icon: <ArrowRightCircle className="text-cyan-500" />,
+  },
+  {
     id: "landasan-hukum",
     title: "Landasan Hukum & Regulasi",
     subtitle: "Payung Institusional Transformasi Digital",
@@ -2955,6 +3222,13 @@ const slides = [
     icon: <Shield className="text-emerald-500" />,
   },
   {
+    id: "benchmark",
+    title: "Benchmark Smart City Nasional",
+    subtitle: "Belajar dari Keberhasilan Daerah Pelopor Digital",
+    content: <SlideBenchmark />,
+    icon: <Award className="text-amber-500" />,
+  },
+  {
     id: "roadmap",
     title: "Roadmap Implementasi",
     subtitle: "Peta Jalan Digitalisasi 2025-2029",
@@ -3049,6 +3323,13 @@ const slides = [
       </div>
     ),
     icon: <Smartphone className="text-teal-500" />,
+  },
+  {
+    id: "cta-closing",
+    title: "",
+    subtitle: "",
+    content: <SlideCTA />,
+    icon: <Sparkles className="text-emerald-500" />,
   }
 ];
 
